@@ -1,0 +1,26 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "happy (dev)",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": ["--dart-define=APP_BUILD=dev"],
+      "preLaunchTask": "dart_format"
+    },
+    {
+      "name": "happy (test)",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": ["--dart-define=APP_BUILD=test"],
+      "preLaunchTask": "dart_format"
+    },
+    {
+      "name": "happy (prod)",
+      "request": "launch",
+      "type": "dart",
+      "toolArgs": ["--dart-define=APP_BUILD=prod"],
+      "preLaunchTask": "dart_format"
+    }
+  ]
+}

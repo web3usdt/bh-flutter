@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dart_format",
+      "type": "shell",
+      "command": "dart format --line-length 150 .",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
+      "label": "flutter_lint",
+      "type": "shell",
+      "command": "flutter analyze",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "close": true
+      }
+    },
+    {
+      "label": "format_and_lint",
+      "dependsOn": ["dart_format", "flutter_lint"],
+      "dependsOrder": "sequence",
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
