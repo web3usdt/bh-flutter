@@ -17,13 +17,13 @@ class AssetsRecordController extends GetxController {
       title = Get.arguments['title'] ?? '';
       print('title: $title');
       if (title == '合约账户') {
-        title = '合约账户'.tr;
+        coinName = '合约账户'.tr;
       } else if (title == '挖矿账户') {
-        title = '挖矿账户'.tr;
+        coinName = '挖矿账户'.tr;
       } else if (title == '理财账户') {
-        title = '理财账户'.tr;
+        coinName = '理财账户'.tr;
       } else if (title == '资金账户') {
-        title = '资金账户'.tr;
+        coinName = '资金账户'.tr;
       }
     }
     update(["assetsRecord"]);

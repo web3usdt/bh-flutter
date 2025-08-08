@@ -82,7 +82,7 @@ class AssetsRecordPage extends GetView<AssetsRecordController> {
   // 主视图
   Widget _buildView(BuildContext context) {
     return CustomScrollView(slivers: [
-      if (controller.coinName != '合约账户' && controller.coinName != '挖矿账户')
+      if (controller.title != '合约账户' && controller.title != '挖矿账户' && controller.title != '理财账户')
         <Widget>[
           SizedBox(
             height: 30.w,
