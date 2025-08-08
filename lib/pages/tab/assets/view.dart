@@ -273,7 +273,7 @@ class AssetsPage extends GetView<AssetsController> {
           <Widget>[
             <Widget>[
               TextWidget.body(
-                '${'挖矿账户'.tr}(${item.coinName})',
+                '${'挖矿账户'.tr}（BB）',
                 size: 20.sp,
                 color: AppTheme.color999,
               ),
@@ -331,13 +331,13 @@ class AssetsPage extends GetView<AssetsController> {
             SizedBox(
               width: 10.w,
             ),
-            Icon(
-              Icons.arrow_forward_ios,
-              size: 18.w,
-              color: AppTheme.color999,
-            ),
+            // Icon(
+            //   Icons.arrow_forward_ios,
+            //   size: 18.w,
+            //   color: AppTheme.color999,
+            // ),
           ].toRow().onTap(() {
-            Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '理财账户'});
+            // Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '理财账户'});
           }),
           SizedBox(
             height: 10.w,

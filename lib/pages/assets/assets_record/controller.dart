@@ -72,7 +72,7 @@ class AssetsRecordController extends GetxController {
         page: isRefresh ? 1 : _page,
       ));
     } else if (title == '挖矿账户') {
-      result = await AssetsApi.getRecordList(PageListReq(page: isRefresh ? 1 : _page, coinName: 'XFB', accountType: '5'));
+      result = await AssetsApi.getRecordList(PageListReq(page: isRefresh ? 1 : _page, coinName: 'BB', accountType: '5'));
     } else if (title == '理财流水') {
       result = await AssetsApi.getLicaiRecordList(PageListReq(
         page: isRefresh ? 1 : _page,
