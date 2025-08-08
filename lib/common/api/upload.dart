@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:io';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class UploadApi {
   /// 上传单张图片

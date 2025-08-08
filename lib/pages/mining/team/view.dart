@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
@@ -14,78 +14,96 @@ class TeamPage extends GetView<TeamController> {
     return <Widget>[
       <Widget>[
         <Widget>[
-          ImgWidget(path: 'assets/images/team1.png',width: 68.w,height: 68.w),
-          SizedBox(width: 20.w,),
+          ImgWidget(path: 'assets/images/team1.png', width: 68.w, height: 68.w),
+          SizedBox(
+            width: 20.w,
+          ),
           <Widget>[
-            TextWidget.body('${controller.miningTeamInfo.inviteUserNum ?? 0}', size: 28.sp, color: AppTheme.color000,weight: FontWeight.w600,),
-            SizedBox(height: 10.w,),
+            TextWidget.body(
+              '${controller.miningTeamInfo.inviteUserNum ?? 0}',
+              size: 28.sp,
+              color: AppTheme.color000,
+              weight: FontWeight.w600,
+            ),
+            SizedBox(
+              height: 10.w,
+            ),
             TextWidget.body('团队总人数'.tr, size: 20.sp, color: AppTheme.color8D9094),
           ].toColumn(crossAxisAlignment: CrossAxisAlignment.start)
         ].toRow(),
         <Widget>[
           TextWidget.body('${'有效'.tr}：${controller.miningTeamStat.validRef ?? 0}', size: 18.sp, color: AppTheme.color000),
-        ].toRow()
-        .paddingHorizontal(12.w)
-        .tight(height: 38.w)
-        .backgroundColor(const Color(0xffA7F757))
-        .clipRRect(topLeft: 20.w, topRight: 20.w,bottomRight: 20.w),
+        ]
+            .toRow()
+            .paddingHorizontal(12.w)
+            .tight(height: 38.w)
+            .backgroundColor(const Color(0xffA7F757))
+            .clipRRect(topLeft: 20.w, topRight: 20.w, bottomRight: 20.w),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-      SizedBox(height: 50.w,),
-
+      SizedBox(
+        height: 50.w,
+      ),
       <Widget>[
         <Widget>[
-          ImgWidget(path: 'assets/images/team2.png',width: 28.w,height: 28.w),
-          SizedBox(width: 20.w,),
+          ImgWidget(path: 'assets/images/team2.png', width: 28.w, height: 28.w),
+          SizedBox(
+            width: 20.w,
+          ),
           TextWidget.body('直接邀请'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         TextWidget.body('${controller.miningTeamStat.validRef ?? 0} ${'人'.tr}', size: 20.sp, color: AppTheme.color000),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 30.w),
-
       <Widget>[
         <Widget>[
-          ImgWidget(path: 'assets/images/team3.png',width: 28.w,height: 28.w),
-          SizedBox(width: 20.w,),
+          ImgWidget(path: 'assets/images/team3.png', width: 28.w, height: 28.w),
+          SizedBox(
+            width: 20.w,
+          ),
           TextWidget.body('间接邀请'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         TextWidget.body('${controller.miningTeamStat.inviteIndirectNum ?? 0} ${'人'.tr}', size: 20.sp, color: AppTheme.color000),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 30.w),
-
       <Widget>[
         <Widget>[
-          ImgWidget(path: 'assets/images/team4.png',width: 28.w,height: 28.w),
-          SizedBox(width: 20.w,),
+          ImgWidget(path: 'assets/images/team4.png', width: 28.w, height: 28.w),
+          SizedBox(
+            width: 20.w,
+          ),
           TextWidget.body('日销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         <Widget>[
           TextWidget.body('${controller.miningTeamInfo.destroyDayXfb ?? 0} XFB', size: 20.sp, color: AppTheme.color000),
-          SizedBox(height: 10.w,),
+          SizedBox(
+            height: 10.w,
+          ),
           TextWidget.body('${controller.miningTeamInfo.destroyDayU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
         ].toColumn()
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 20.w),
-
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 20.w),
       <Widget>[
         <Widget>[
-          ImgWidget(path: 'assets/images/team5.png',width: 28.w,height: 28.w),
-          SizedBox(width: 20.w,),
+          ImgWidget(path: 'assets/images/team5.png', width: 28.w, height: 28.w),
+          SizedBox(
+            width: 20.w,
+          ),
           TextWidget.body('月销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         <Widget>[
           TextWidget.body('${controller.miningTeamInfo.destroyMonthXfb ?? 0} XFB', size: 20.sp, color: AppTheme.color000),
-          SizedBox(height: 10.w,),
+          SizedBox(
+            height: 10.w,
+          ),
           TextWidget.body('${controller.miningTeamInfo.destroyMonthU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
         ].toColumn()
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween,crossAxisAlignment: CrossAxisAlignment.start),
-
-
-    ].toColumn()
-    .paddingAll(30.w)
-    .decorated(
-      borderRadius: BorderRadius.circular(16.w),
-      border: Border.all(color: AppTheme.borderLine),
-    )
-    .padding(left: 30.w, right: 30.w, bottom: 30.w, top: 30.w);
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start),
+    ]
+        .toColumn()
+        .paddingAll(30.w)
+        .decorated(
+          borderRadius: BorderRadius.circular(16.w),
+          border: Border.all(color: AppTheme.borderLine),
+        )
+        .padding(left: 30.w, right: 30.w, bottom: 30.w, top: 30.w);
   }
-
 
   // 划转记录
   Widget _buildRecord() {
@@ -109,24 +127,28 @@ class TeamPage extends GetView<TeamController> {
                   width: 10.w,
                 ),
                 <Widget>[
-                  TextWidget.body(item.level == 1
-                      ? '新手矿工'.tr
-                      : item.level == 2
-                          ? '正式矿工'.tr
-                          : item.level == 3
-                              ? '节点矿池'.tr
-                              : item.level == 4
-                                  ? '蜂窝矿池'.tr
-                                  : item.level == 5
-                                      ? '超级矿池'.tr
-                                      : item.level == 6
-                                          ? '创世矿池'.tr
-                                          : '', size: 18.sp, color: AppTheme.color000),
-                ].toRow()
-                .paddingHorizontal(12.w)
-                .tight(height: 32.w)
-                .backgroundColor(const Color(0xffA7F757))
-                .clipRRect(topLeft: 16.w, topRight: 16.w,bottomRight: 16.w),
+                  TextWidget.body(
+                      item.level == 1
+                          ? '新手矿工'.tr
+                          : item.level == 2
+                              ? '正式矿工'.tr
+                              : item.level == 3
+                                  ? '节点矿池'.tr
+                                  : item.level == 4
+                                      ? '蜂窝矿池'.tr
+                                      : item.level == 5
+                                          ? '超级矿池'.tr
+                                          : item.level == 6
+                                              ? '创世矿池'.tr
+                                              : '',
+                      size: 18.sp,
+                      color: AppTheme.color000),
+                ]
+                    .toRow()
+                    .paddingHorizontal(12.w)
+                    .tight(height: 32.w)
+                    .backgroundColor(const Color(0xffA7F757))
+                    .clipRRect(topLeft: 16.w, topRight: 16.w, bottomRight: 16.w),
               ].toRow(),
               TextWidget.body('${item.createdAt}', size: 18.sp, color: AppTheme.color999),
             ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
@@ -135,39 +157,33 @@ class TeamPage extends GetView<TeamController> {
             ),
             <Widget>[
               <Widget>[
-                
                 TextWidget.body('我的矿机(台)'.tr, size: 24.sp, color: AppTheme.color999),
                 SizedBox(
                   height: 10.w,
                 ),
                 TextWidget.body('${item.minerCount}', size: 24.sp, color: AppTheme.color000),
-                
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   )
                   .width(210.w),
               <Widget>[
-                
                 TextWidget.body('我的算力值'.tr, size: 24.sp, color: AppTheme.color999),
                 SizedBox(
                   height: 10.w,
                 ),
                 TextWidget.body('${item.totalPower}', size: 24.sp, color: AppTheme.color000),
-                
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   )
                   .width(210.w),
               <Widget>[
-                
                 TextWidget.body('昨日收益'.tr, size: 24.sp, color: AppTheme.color999),
                 SizedBox(
                   height: 10.w,
                 ),
                 TextWidget.body('${item.produceNum}', size: 24.sp, color: AppTheme.color000),
-                
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -207,15 +223,13 @@ class TeamPage extends GetView<TeamController> {
         ),
         <Widget>[
           TextWidget.body('${controller.miningTeamInfo.teamMiner ?? 0} ${'台'.tr}', size: 18.sp, color: AppTheme.color000),
-        ].toRow()
-        .paddingHorizontal(12.w)
-        .tight(height: 32.w)
-        .backgroundColor(const Color(0xffA7F757))
-        .clipRRect(topLeft: 16.w, topRight: 16.w,bottomRight: 16.w),
-      ]
-          .toRow()
-          .sliverToBoxAdapter()
-          .sliverPaddingHorizontal(30.w),
+        ]
+            .toRow()
+            .paddingHorizontal(12.w)
+            .tight(height: 32.w)
+            .backgroundColor(const Color(0xffA7F757))
+            .clipRRect(topLeft: 16.w, topRight: 16.w, bottomRight: 16.w),
+      ].toRow().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
       controller.items.isEmpty ? _buildEmpty().sliverToBoxAdapter() : _buildRecord().sliverPaddingHorizontal(30.w),
     ]);
   }

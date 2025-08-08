@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'index.dart';
 
@@ -242,7 +242,7 @@ class MiningPage extends GetView<MiningController> {
         ),
         if (controller.miningUserinfo.isNews == 0)
           ButtonWidget(
-            text: '立即领取'.tr,
+            text: '激活矿机'.tr,
             height: 64,
             borderRadius: 32,
             width: 630,
@@ -253,7 +253,7 @@ class MiningPage extends GetView<MiningController> {
           )
         else
           ButtonWidget(
-            text: '已领取'.tr,
+            text: '已激活'.tr,
             height: 64,
             borderRadius: 32,
             width: 630,

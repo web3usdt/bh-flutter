@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
-import 'package:happy/pages/tab/main/controller.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/pages/tab/main/controller.dart';
 
 class CoinController extends GetxController {
   CoinController();

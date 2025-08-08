@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 /// 环境配置
 class Env {
@@ -54,7 +54,7 @@ class EnvConfig {
     //生产环境
     tag: 'ceshi',
     name: '测试节点',
-    apiBaseUrl: 'https://h5.happyxfb.vip', // prod环境域名
+    apiBaseUrl: 'https://happyxfb.vip', // prod环境域名
     socketUrl1: 'wss://h5.happyxfb.vip/ws1', // prod环境Socket地址1
     socketUrl2: 'wss://h5.happyxfb.vip/ws2', // prod环境Socket地址2
     socketUrl3: 'wss://h5.happyxfb.vip/ws3', // dev环境Socket地址3

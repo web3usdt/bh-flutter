@@ -2,8 +2,8 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
-import 'package:happy/common/services/logout.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/common/services/logout.dart';
 
 class UserinfoController extends GetxController {
   UserinfoController();

@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -46,10 +46,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
             controller: controller.phoneController,
           ).expanded(),
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 30.w),
 
       // 验证码
@@ -73,10 +70,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
             },
           )
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 30.w),
 
       if (controller.showGoogleAuth)
@@ -93,10 +87,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
               controller: controller.googleCodeController,
             ).expanded(),
           ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-                borderRadius: BorderRadius.circular(10.w),
-                border: Border.all(color: AppTheme.borderLine, width: 1),
-                color: AppTheme.blockBgColor
-              ),
+              borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
         ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 30.w),
 
       // 登陆密码
@@ -114,10 +105,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
             obscureText: true,
           ).expanded(),
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 30.w),
 
       // 确认密码
@@ -135,10 +123,7 @@ class ForgotPasswordPage extends GetView<ForgotPasswordController> {
             obscureText: true,
           ).expanded(),
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 80.w),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingHorizontal(30.w);
   }

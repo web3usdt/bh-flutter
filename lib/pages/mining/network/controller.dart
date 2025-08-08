@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class NetworkController extends GetxController {
   NetworkController();

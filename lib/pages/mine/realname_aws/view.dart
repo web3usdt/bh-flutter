@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:camera/camera.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'index.dart';

@@ -1,6 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fl_chart/fl_chart.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -100,10 +100,7 @@ class HomePage extends GetView<HomeController> {
           width: 20.w,
           height: 20.w,
         ).onTap(() => controller.goNoticeList()),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.start)
-      .paddingHorizontal(20.w)
-      .backgroundColor(const Color(0xff303236))
-      .clipRRect(all: 32.w)
+      ].toRow(mainAxisAlignment: MainAxisAlignment.start).paddingHorizontal(20.w).backgroundColor(const Color(0xff303236)).clipRRect(all: 32.w)
     ].toRow().height(64.w);
   }
 

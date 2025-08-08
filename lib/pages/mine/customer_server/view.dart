@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/style/theme.dart';
-import 'package:happy/pages/mine/customer_server/Controller.dart';
+import 'package:BBIExchange/common/style/theme.dart';
+import 'package:BBIExchange/pages/mine/customer_server/Controller.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 class CustomerServerPage extends GetView<CustomerServerController> {

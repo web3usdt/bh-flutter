@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:decimal/decimal.dart';
 
 class AssetsController extends GetxController {
@@ -25,6 +25,11 @@ class AssetsController extends GetxController {
   List<AssetsMinerAccountModel> minerAccountList = [];
   // 个人账户
   AssetsPersonalAccountModel personalAccount = AssetsPersonalAccountModel();
+  // 理财余额
+  String? licaiBalance;
+  // 理财币种列表
+  List<AssetsFundAccountListModel> licaiCoinList = [];
+
   // 游戏，资产切换
   bool isShowGame = false;
   void changeShowGame(bool value) {
@@ -61,6 +66,12 @@ class AssetsController extends GetxController {
     // 获取挖矿账户列表
     minerAccountList = await AssetsApi.getMinerAccount();
     Storage().setJson('minerAccountList', minerAccountList);
+
+    // 获取理财账户
+    var res = await AssetsApi.getlicaiAccount();
+    licaiBalance = res.totalAssetsUsdt;
+    licaiCoinList = res.list;
+    Storage().setJson('licaiCoinList', licaiCoinList);
     update(["assets"]);
   }
 
@@ -112,6 +123,13 @@ class AssetsController extends GetxController {
     var stringPersonalAccount = Storage().getString('personalAccount');
     personalAccount =
         stringPersonalAccount != "" ? AssetsPersonalAccountModel.fromJson(jsonDecode(stringPersonalAccount)) : AssetsPersonalAccountModel();
+
+    var stringLicaiCoinList = Storage().getString('licaiCoinList');
+    licaiCoinList = stringLicaiCoinList != ""
+        ? jsonDecode(stringLicaiCoinList).map<AssetsFundAccountListModel>((item) {
+            return AssetsFundAccountListModel.fromJson(item);
+          }).toList()
+        : [];
 
     update(["assets"]);
   }

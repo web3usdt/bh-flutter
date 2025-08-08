@@ -1,11 +1,11 @@
-import 'package:happy/pages/tab/assets/index.dart';
-import 'package:happy/pages/tab/coin/index.dart';
-import 'package:happy/pages/tab/contract/index.dart';
-import 'package:happy/pages/tab/home/index.dart';
-import 'package:happy/pages/tab/main/index.dart';
-import 'package:happy/pages/tab/mining/index.dart';
+import 'package:BBIExchange/pages/tab/assets/index.dart';
+import 'package:BBIExchange/pages/tab/coin/index.dart';
+import 'package:BBIExchange/pages/tab/contract/index.dart';
+import 'package:BBIExchange/pages/tab/home/index.dart';
+import 'package:BBIExchange/pages/tab/main/index.dart';
+import 'package:BBIExchange/pages/tab/mining/index.dart';
 import 'package:get/get.dart';
-import 'package:happy/pages/tab/option/index.dart';
+import 'package:BBIExchange/pages/tab/option/index.dart';
 
 /// 主界面依赖
 class MainBinding implements Bindings {

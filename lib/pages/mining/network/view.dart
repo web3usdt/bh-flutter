@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'index.dart';
@@ -43,12 +43,10 @@ class NetworkPage extends GetView<NetworkController> {
         TextWidget.body('昨日已产出'.tr, size: 24.sp, color: AppTheme.color8D9094),
         TextWidget.body('${controller.miningUserinfo.miner?.yesterdayProduce ?? 0}', size: 24.sp, color: AppTheme.color000),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-    ].toColumn()
-    .paddingAll(30.w)
-    .decorated(
-      border: Border.all(color: AppTheme.borderLine),
-      borderRadius: BorderRadius.circular(16.w),
-    );
+    ].toColumn().paddingAll(30.w).decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(16.w),
+        );
   }
 
   // 今日
@@ -77,24 +75,32 @@ class NetworkPage extends GetView<NetworkController> {
         TextWidget.body('昨日已销毁'.tr, size: 24.sp, color: AppTheme.color8D9094),
         TextWidget.body('${controller.miningUserinfo.miner?.yesterdayDel ?? 0}', size: 24.sp, color: AppTheme.color000),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-    ].toColumn()
-    .paddingAll(30.w)
-    .decorated(
-      border: Border.all(color: AppTheme.borderLine),
-      borderRadius: BorderRadius.circular(16.w),
-    );
+    ].toColumn().paddingAll(30.w).decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(16.w),
+        );
   }
 
   // 主视图
   Widget _buildView() {
     return <Widget>[
-      TextWidget.body('全网算力'.tr, size: 32.sp, color: AppTheme.color000,weight: FontWeight.w600,).marginOnly(left: 30.w,top: 30.w),
+      TextWidget.body(
+        '全网算力'.tr,
+        size: 32.sp,
+        color: AppTheme.color000,
+        weight: FontWeight.w600,
+      ).marginOnly(left: 30.w, top: 30.w),
       _buildNetwork().paddingAll(30.w),
       TDDivider(
         height: 1.w,
         color: AppTheme.dividerColor,
-      ).marginOnly(top:20.w,left: 30.w,right: 30.w),
-      TextWidget.body('全网已销毁'.tr, size: 32.sp, color: AppTheme.color000,weight: FontWeight.w600,).marginOnly(left: 30.w,top: 40.w),
+      ).marginOnly(top: 20.w, left: 30.w, right: 30.w),
+      TextWidget.body(
+        '全网已销毁'.tr,
+        size: 32.sp,
+        color: AppTheme.color000,
+        weight: FontWeight.w600,
+      ).marginOnly(left: 30.w, top: 40.w),
       _buildToday().paddingAll(30.w),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start);
   }

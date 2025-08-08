@@ -2,7 +2,7 @@ import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'dart:ui' as ui;
 import 'package:url_launcher/url_launcher.dart';
@@ -127,7 +127,7 @@ class HashGameDetailController extends GetxController {
                           ImgWidget(path: 'assets/icons/ic_logo.png', width: 72.w, height: 72.w),
                           SizedBox(width: 20.w),
                           <Widget>[
-                            TextWidget.body('HAPPY', size: 30.sp, color: AppTheme.color000, weight: FontWeight.w600),
+                            TextWidget.body('BBI Exchange', size: 30.sp, color: AppTheme.color000, weight: FontWeight.w600),
                             SizedBox(height: 10.w),
                             TextWidget.body('数字资产交易平台'.tr, size: 20.sp, color: AppTheme.color000),
                           ].toColumn(crossAxisAlignment: CrossAxisAlignment.start)

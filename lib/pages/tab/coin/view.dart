@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -351,8 +351,7 @@ class CoinPage extends GetView<CoinController> {
         color: AppTheme.color000,
       ),
       buildLineChart(Get.context!, controller.tradeList ?? []),
-    ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).clipRRect(all: 20.w).marginOnly(top: 20.w)
-    .onTap(() {
+    ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).clipRRect(all: 20.w).marginOnly(top: 20.w).onTap(() {
       controller.goKLine();
     });
   }

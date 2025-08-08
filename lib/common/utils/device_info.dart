@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:uuid/uuid.dart';
-import 'package:happy/common/utils/index.dart';
+import 'package:BBIExchange/common/utils/index.dart';
 
 class DeviceInfoService {
   // 单例实现

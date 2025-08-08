@@ -1,9 +1,9 @@
 import 'dart:async';
 
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/pages/login/login/index.dart';
+import 'package:BBIExchange/pages/login/login/index.dart';
 
 class EditPasswordController extends GetxController {
   EditPasswordController();

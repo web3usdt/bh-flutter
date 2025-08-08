@@ -93,6 +93,7 @@ class AssetsApi {
       '/api/app/user/withdrawalBalance',
       data: req.toJson(),
     );
+    print('提币余额原始数据: ${res.data}');
     return AssetsWdithdrawBalanceModel.fromJson(res.data['data']);
   }
 
@@ -236,5 +237,13 @@ class AssetsApi {
       return data.map((e) => AssetsMinerAccountModel.fromJson(e)).toList();
     }
     return [];
+  }
+
+  // 获取理财账户
+  static Future<AssetsLicaiModel> getlicaiAccount() async {
+    final res = await WPHttpService.to.get(
+      '/api/app/user/earnAccount',
+    );
+    return AssetsLicaiModel.fromJson(res.data['data']);
   }
 }

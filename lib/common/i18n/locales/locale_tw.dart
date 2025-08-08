@@ -38,7 +38,7 @@ Map<String, String> localeTw = {
 
   // 登录模块相关
   '登录': '登入',
-  'Hello!欢迎来到HAPPY': 'Hello!歡迎來到HAPPY',
+  'Hello!欢迎来到BBI Exchange': 'Hello!歡迎來到BBI Exchange',
   '账号': '帳號',
   '请输入账号': '請輸入帳號',
   '登陆密码': '登入密碼',
@@ -652,4 +652,7 @@ Map<String, String> localeTw = {
   '游戏账户': '遊戲帳戶',
   '待结算': '待結算',
   '未中獎': '未中獎',
+  '激活矿机': '激活礦機',
+  '激活矿机需要扣除50USDT，是否继续？': '激活礦機需要扣除50USDT，是否繼續？',
+  '激活成功': '激活成功',
 };

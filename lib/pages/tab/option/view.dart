@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 import 'index.dart';
@@ -40,15 +40,15 @@ class OptionPage extends GetView<OptionController> {
             weight: FontWeight.bold,
             textAlign: TextAlign.center,
           )
-          .paddingVertical(15.w)
-          .tight(
-            width: 120.w,
-          )
-          .decorated(
-            border: Border.all(color: controller.tabIndex == i ? Colors.black : AppTheme.borderLine),
-            borderRadius: BorderRadius.circular(16.w),
-          )
-          .onTap(() {
+              .paddingVertical(15.w)
+              .tight(
+                width: 120.w,
+              )
+              .decorated(
+                border: Border.all(color: controller.tabIndex == i ? Colors.black : AppTheme.borderLine),
+                borderRadius: BorderRadius.circular(16.w),
+              )
+              .onTap(() {
             controller.onTapTabIndex(i);
           }),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).paddingHorizontal(30.w).tight(width: 750.w, height: 84.w),
@@ -232,12 +232,10 @@ class OptionPage extends GetView<OptionController> {
       SizedBox(
         height: 40.w,
       ),
-    ].toColumn()
-    .paddingAll(30.w)
-    .decorated(
-      border: Border.all(color: AppTheme.borderLine),
-      borderRadius: BorderRadius.circular(16.w),
-    );
+    ].toColumn().paddingAll(30.w).decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(16.w),
+        );
   }
 
   // 列表渲染
@@ -257,7 +255,7 @@ class OptionPage extends GetView<OptionController> {
                   height: 44.w,
                 ),
                 SizedBox(
-                  width: 12 .w,
+                  width: 12.w,
                 ),
                 TextWidget.body(
                   scenePairList[i].pairName ?? '',
@@ -275,7 +273,6 @@ class OptionPage extends GetView<OptionController> {
                 ),
               ].toRow(),
               <Widget>[
-                
                 SizedBox(
                   height: 10.w,
                 ),
@@ -340,14 +337,15 @@ class OptionPage extends GetView<OptionController> {
                   .backgroundColor(AppTheme.blockBgColor)
                   .clipRRect(all: 10.w),
             ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-          ].toColumn()
-          .paddingAll(30.w)
-          .decorated(
-            border: Border.all(color: AppTheme.borderLine),
-            borderRadius: BorderRadius.circular(16.w),
-          )
-          .marginOnly(top: 20.w)
-          .onTap(() {
+          ]
+              .toColumn()
+              .paddingAll(30.w)
+              .decorated(
+                border: Border.all(color: AppTheme.borderLine),
+                borderRadius: BorderRadius.circular(16.w),
+              )
+              .marginOnly(top: 20.w)
+              .onTap(() {
             controller.onTapDetail(scenePairList[i]);
           }),
       SizedBox(

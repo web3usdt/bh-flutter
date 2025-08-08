@@ -4,7 +4,7 @@ import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 class RechargeController extends GetxController {
@@ -103,7 +103,18 @@ class RechargeController extends GetxController {
     SelectCoin.showPicker(
       context: context,
       title: '选择币种'.tr,
-      items: coinList.map((e) => {'id': e.coinId, 'name': e.coinName, 'icon': ImgWidget(path: e.image ?? '', width: 40.w, height: 40.w,radius: 20.w,)}).toList(),
+      items: coinList
+          .map((e) => {
+                'id': e.coinId,
+                'name': e.coinName,
+                'icon': ImgWidget(
+                  path: e.image ?? '',
+                  width: 40.w,
+                  height: 40.w,
+                  radius: 20.w,
+                )
+              })
+          .toList(),
       onConfirm: (selected) {
         selectedCoin = selected['name'];
         selectedCoinId = selected['id'];

@@ -1,5 +1,5 @@
 import 'package:clipboard/clipboard.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:get/get.dart';
 
 /// 剪贴板工具类

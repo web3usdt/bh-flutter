@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:adaptive_theme/adaptive_theme.dart';
-import 'package:happy/global.dart';
+import 'package:BBIExchange/global.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'common/index.dart';
-import 'package:happy/pages/mine/develop_mode/controller.dart';
+import 'package:BBIExchange/pages/mine/develop_mode/controller.dart';
 // ignore: depend_on_referenced_packages
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:dart_ping_ios/dart_ping_ios.dart';
@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
                   footerTriggerDistance: 150, // 触发加载的距离
                   child: GetMaterialApp(
                     debugShowCheckedModeBanner: false,
-                    title: 'Happy',
+                    title: 'BBI Exchange',
 
                     // 主题
                     theme: theme,

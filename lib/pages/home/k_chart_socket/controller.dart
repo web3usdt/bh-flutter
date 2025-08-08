@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:k_chart/flutter_k_chart.dart';
 
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class KChartController extends GetxController with GetSingleTickerProviderStateMixin {
   KChartController();

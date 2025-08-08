@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 class MyMiningController extends GetxController {
@@ -38,9 +38,7 @@ class MyMiningController extends GetxController {
 
     // 挖矿信息
     var stringMiningUserinfo = Storage().getString('miningUserinfo');
-    miningUserinfo = stringMiningUserinfo != ""
-        ? MiningUserinfoModel.fromJson(jsonDecode(stringMiningUserinfo))
-        : MiningUserinfoModel();
+    miningUserinfo = stringMiningUserinfo != "" ? MiningUserinfoModel.fromJson(jsonDecode(stringMiningUserinfo)) : MiningUserinfoModel();
     update(["my_mining"]);
   }
 
@@ -77,12 +75,10 @@ class MyMiningController extends GetxController {
       backgroundColor: AppTheme.pageBgColor,
       onConfirm: () async {
         // 确认操作
-        if (buyMiningNumController.text.isEmpty)
-          return Loading.toast('请输入购买矿机数量'.tr);
+        if (buyMiningNumController.text.isEmpty) return Loading.toast('请输入购买矿机数量'.tr);
         Get.back();
         Loading.show();
-        var res =
-            await MiningApi.buyMining(int.parse(buyMiningNumController.text));
+        var res = await MiningApi.buyMining(int.parse(buyMiningNumController.text));
         if (res) {
           Loading.success('购买成功'.tr);
           _initData();
@@ -126,9 +122,7 @@ class MyMiningController extends GetxController {
       try {
         // 拉取数据是否为空 ? 设置暂无数据 ： 加载完成
         var isEmpty = await _loadNewsSell(false);
-        isEmpty
-            ? refreshController.loadNoData()
-            : refreshController.loadComplete();
+        isEmpty ? refreshController.loadNoData() : refreshController.loadComplete();
       } catch (e) {
         refreshController.loadFailed(); // 加载失败
       }

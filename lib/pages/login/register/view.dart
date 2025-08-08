@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,7 +20,7 @@ class RegisterPage extends GetView<RegisterController> {
       ),
       SizedBox(height: 20.w),
       TextWidget.body(
-        'Hello!欢迎来到HAPPY'.tr,
+        'Hello!欢迎来到BBI Exchange'.tr,
         size: 28.sp,
         color: AppTheme.color000,
       ),

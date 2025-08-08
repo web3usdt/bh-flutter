@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
@@ -26,7 +26,7 @@ class MyMiningPage extends GetView<MyMiningController> {
           TextWidget.body('矿机'.tr, size: 32.sp, color: AppTheme.color000),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
         ButtonWidget(
-          text: '购买'.tr, 
+          text: '购买'.tr,
           height: 54,
           borderRadius: 27,
           backgroundColor: AppTheme.color000,
@@ -51,7 +51,6 @@ class MyMiningPage extends GetView<MyMiningController> {
             TextWidget.body('(台)'.tr, size: 24.sp, color: AppTheme.color000),
           ].toRow(),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-
         <Widget>[
           TextWidget.body('新手矿机'.tr, size: 24.sp, color: AppTheme.color8D9094),
           <Widget>[
@@ -59,7 +58,6 @@ class MyMiningPage extends GetView<MyMiningController> {
             TextWidget.body('(台)'.tr, size: 24.sp, color: AppTheme.color000),
           ].toRow(),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-
         <Widget>[
           TextWidget.body('已激活'.tr, size: 24.sp, color: AppTheme.color8D9094),
           <Widget>[
@@ -67,7 +65,6 @@ class MyMiningPage extends GetView<MyMiningController> {
             TextWidget.body('(台)'.tr, size: 24.sp, color: AppTheme.color000),
           ].toRow(),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-
         <Widget>[
           TextWidget.body('未激活'.tr, size: 24.sp, color: AppTheme.color8D9094),
           <Widget>[
@@ -75,18 +72,17 @@ class MyMiningPage extends GetView<MyMiningController> {
             TextWidget.body('(台)'.tr, size: 24.sp, color: AppTheme.color000),
           ].toRow(),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-
         <Widget>[
           TextWidget.body('已转让'.tr, size: 24.sp, color: AppTheme.color8D9094),
           <Widget>[
-            TextWidget.body('${controller.miningUserinfo.minerCount! > 0 ? controller.miningUserinfo.minerCount! - controller.miningUserinfo.minerNoactiveCount! - 1 : 0}', size: 24.sp, color: AppTheme.color000),
+            TextWidget.body(
+                '${controller.miningUserinfo.minerCount! > 0 ? controller.miningUserinfo.minerCount! - controller.miningUserinfo.minerNoactiveCount! - 1 : 0}',
+                size: 24.sp,
+                color: AppTheme.color000),
             TextWidget.body('(台)'.tr, size: 24.sp, color: AppTheme.color000),
           ].toRow(),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
-        
       ].toColumn(),
-
-
     ].toColumn();
   }
 
@@ -106,58 +102,41 @@ class MyMiningPage extends GetView<MyMiningController> {
               SizedBox(
                 width: 20.w,
               ),
-              TextWidget.body(item.purchaseTime ?? '',
-                  size: 28.sp, color: AppTheme.color000),
-            ]
-                .toRow(),
+              TextWidget.body(item.purchaseTime ?? '', size: 28.sp, color: AppTheme.color000),
+            ].toRow(),
             SizedBox(
               height: 40.w,
             ),
             <Widget>[
               <Widget>[
-                TextWidget.body('矿机类型'.tr,
-                    size: 24.sp, color: AppTheme.color999),
-                    SizedBox(
+                TextWidget.body('矿机类型'.tr, size: 24.sp, color: AppTheme.color999),
+                SizedBox(
                   height: 10.w,
                 ),
-                TextWidget.body(item.orderType == 1 ? 'Buy' : "Sell",
-                    size: 24.sp, color: AppTheme.color000),
-               
+                TextWidget.body(item.orderType == 1 ? 'Buy' : "Sell", size: 24.sp, color: AppTheme.color000),
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   )
                   .width(210.w),
               <Widget>[
-                TextWidget.body('矿机数量(台)'.tr,
-                    size: 24.sp, color: AppTheme.color999),
-                    SizedBox(
+                TextWidget.body('矿机数量(台)'.tr, size: 24.sp, color: AppTheme.color999),
+                SizedBox(
                   height: 10.w,
                 ),
-                TextWidget.body('${item.num ?? 0}',
-                    size: 24.sp, color: AppTheme.color000),
-                
+                TextWidget.body('${item.num ?? 0}', size: 24.sp, color: AppTheme.color000),
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
                   )
                   .width(210.w),
               <Widget>[
-                
-                TextWidget.body('交易人'.tr,
-                    size: 24.sp, color: AppTheme.color999),
-                    SizedBox(
+                TextWidget.body('交易人'.tr, size: 24.sp, color: AppTheme.color999),
+                SizedBox(
                   height: 10.w,
                 ),
-                TextWidget.body(
-                    item.inviterId == 0
-                        ? "System"
-                        : (item.related != null
-                            ? item.related!.account ?? ''
-                            : ''),
-                    size: 24.sp,
-                    color: AppTheme.color000),
-                
+                TextWidget.body(item.inviterId == 0 ? "System" : (item.related != null ? item.related!.account ?? '' : ''),
+                    size: 24.sp, color: AppTheme.color000),
               ]
                   .toColumn(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -193,9 +172,7 @@ class MyMiningPage extends GetView<MyMiningController> {
       SizedBox(
         height: 30.w,
       ).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
-      TextWidget.body('我的矿机'.tr, size: 28.sp, color: AppTheme.color000)
-          .sliverToBoxAdapter()
-          .sliverPaddingHorizontal(30.w),
+      TextWidget.body('我的矿机'.tr, size: 28.sp, color: AppTheme.color000).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
       if (controller.items.isEmpty) _buildEmpty().sliverToBoxAdapter(),
       _buildRecord().sliverPaddingHorizontal(30.w),
     ]);

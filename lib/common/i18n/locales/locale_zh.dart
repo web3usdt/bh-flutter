@@ -38,7 +38,7 @@ Map<String, String> localeZh = {
 
   // 登录模块相关
   '登录': '登录',
-  'Hello!欢迎来到HAPPY': 'Hello!欢迎来到HAPPY',
+  'Hello!欢迎来到BBI Exchange': 'Hello!欢迎来到BBI Exchange',
   '账号': '账号',
   '请输入账号': '请输入账号',
   '登陆密码': '登陆密码',
@@ -653,4 +653,7 @@ Map<String, String> localeZh = {
   '游戏账户': '游戏账户',
   '待结算': '待结算',
   '未中奖': '未中奖',
+  '激活矿机': '激活矿机',
+  '激活矿机需要扣除50USDT，是否继续？': '激活矿机需要扣除50USDT，是否继续？',
+  '激活成功': '激活成功',
 };

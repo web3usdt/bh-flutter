@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class MiningUserinfoModelMinerMinerNum {
   int? num2;

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
-import 'package:happy/pages/login/login/controller.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/pages/login/login/controller.dart';
 
 class LogoutService {
   static Future<void> logout() async {

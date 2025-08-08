@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -325,11 +325,7 @@ class OptionBuyPage extends GetView<OptionBuyController> {
             color: AppTheme.color000,
           ),
         ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-      ].toColumn()
-      .paddingAll(30.w)
-      .backgroundColor(AppTheme.blockBgColor)
-      .clipRRect(all: 20.w)
-      .marginOnly(bottom: 30.w),
+      ].toColumn().paddingAll(30.w).backgroundColor(AppTheme.blockBgColor).clipRRect(all: 20.w).marginOnly(bottom: 30.w),
       // 进度对比
       <Widget>[
         // 左边
@@ -392,7 +388,6 @@ class OptionBuyPage extends GetView<OptionBuyController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
 
-
       // 按钮组
       <Widget>[
         ButtonWidget(
@@ -423,12 +418,15 @@ class OptionBuyPage extends GetView<OptionBuyController> {
           onTap: () => _showBottomSheet('看空'.tr),
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-    ].toColumn().paddingAll(30.w).width(690.w)
-    .decorated(
-      border: Border.all(color: AppTheme.borderLine),
-      borderRadius: BorderRadius.circular(16.w),
-    )
-    .paddingAll(30.w);
+    ]
+        .toColumn()
+        .paddingAll(30.w)
+        .width(690.w)
+        .decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(16.w),
+        )
+        .paddingAll(30.w);
   }
 
   // 底部弹窗

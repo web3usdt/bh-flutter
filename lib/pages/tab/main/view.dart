@@ -1,14 +1,14 @@
-import 'package:happy/common/index.dart';
-import 'package:happy/pages/tab/assets/index.dart';
-import 'package:happy/pages/tab/coin/view.dart';
-import 'package:happy/pages/tab/contract/index.dart';
-import 'package:happy/pages/tab/home/index.dart';
-import 'package:happy/pages/tab/mining/index.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/pages/tab/assets/index.dart';
+import 'package:BBIExchange/pages/tab/coin/view.dart';
+import 'package:BBIExchange/pages/tab/contract/index.dart';
+import 'package:BBIExchange/pages/tab/home/index.dart';
+import 'package:BBIExchange/pages/tab/mining/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:happy/pages/tab/option/index.dart';
+import 'package:BBIExchange/pages/tab/option/index.dart';
 
 import 'index.dart';
 

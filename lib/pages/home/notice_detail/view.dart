@@ -1,5 +1,5 @@
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

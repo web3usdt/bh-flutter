@@ -1,4 +1,4 @@
-package com.happy.exchange.net
+package app.bbiexchange.net
 
 import io.flutter.embedding.android.FlutterActivity
 

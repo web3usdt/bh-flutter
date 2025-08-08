@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
-import 'package:happy/common/services/logout.dart';
-import 'package:happy/common/utils/action_sheet_util.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/common/services/logout.dart';
+import 'package:BBIExchange/common/utils/action_sheet_util.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
 class DevelopModeController extends GetxController {

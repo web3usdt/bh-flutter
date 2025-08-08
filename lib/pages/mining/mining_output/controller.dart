@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
-import 'package:happy/common/models/mining/mining_coin_record_model.dart';
+import 'package:BBIExchange/common/index.dart';
+import 'package:BBIExchange/common/models/mining/mining_coin_record_model.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 class MiningOutputController extends GetxController {

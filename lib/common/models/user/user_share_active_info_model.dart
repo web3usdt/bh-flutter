@@ -1,4 +1,4 @@
-import 'package:happy/common/utils/index.dart';
+import 'package:BBIExchange/common/utils/index.dart';
 
 class UserShareActiveInfoModel {
   int? id;

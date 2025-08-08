@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class NoticeDetailController extends GetxController {
   NoticeDetailController();

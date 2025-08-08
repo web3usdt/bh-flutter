@@ -1,7 +1,7 @@
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 
@@ -75,7 +75,7 @@ class WithdrawPage extends GetView<WithdrawController> {
           TextWidget.body('提币数量'.tr, size: 26.sp, color: AppTheme.color000),
           TextWidget.body(
               '余额:@amount @coin'.trParams({
-                'amount': controller.withdrawBalance.usableBalance.toString(),
+                'amount': controller.withdrawBalance.usableBalance?.toString() ?? '0',
                 'coin': controller.selectedCoin,
               }),
               size: 24.sp,

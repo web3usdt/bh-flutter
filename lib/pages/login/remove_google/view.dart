@@ -1,4 +1,4 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -37,10 +37,7 @@ class RemoveGooglePage extends GetView<RemoveGoogleController> {
             controller: controller.phoneController,
           ).expanded(),
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 30.w),
 
       // 验证码
@@ -63,10 +60,7 @@ class RemoveGooglePage extends GetView<RemoveGoogleController> {
             },
           )
         ].toRow(crossAxisAlignment: CrossAxisAlignment.center).paddingHorizontal(30.w).height(90.w).decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-              color: AppTheme.blockBgColor
-            ),
+            borderRadius: BorderRadius.circular(10.w), border: Border.all(color: AppTheme.borderLine, width: 1), color: AppTheme.blockBgColor),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 100.w),
 
       ButtonWidget(

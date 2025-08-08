@@ -2,7 +2,7 @@ import 'package:decimal/decimal.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'index.dart';
 
@@ -154,6 +154,14 @@ class AssetsPage extends GetView<AssetsController> {
         size: 28.sp,
         color: controller.currentTab == 2 ? AppTheme.color000 : AppTheme.color8D9094,
       ).onTap(() => controller.changeTab(2)),
+      SizedBox(
+        width: 50.w,
+      ),
+      TextWidget.body(
+        '理财账户'.tr,
+        size: 28.sp,
+        color: controller.currentTab == 3 ? AppTheme.color000 : AppTheme.color8D9094,
+      ).onTap(() => controller.changeTab(3)),
     ].toRow().height(100.w);
   }
 
@@ -305,6 +313,46 @@ class AssetsPage extends GetView<AssetsController> {
     ].toColumn();
   }
 
+  // 理财账户
+  Widget _buildlicai() {
+    return <Widget>[
+      <Widget>[
+        ImgWidget(path: 'assets/images/usdt.png', width: 60.w, height: 60.w),
+        SizedBox(
+          width: 20.w,
+        ),
+        <Widget>[
+          TextWidget.body(
+            '理财账户(USDT)'.tr,
+            size: 20.sp,
+            color: AppTheme.color8D9094,
+          ),
+          SizedBox(
+            height: 10.w,
+          ),
+          TextWidget.body(
+            '≈ ${formatDecimal(controller.licaiBalance, toFixed: controller.personalAccount.priceDecimals ?? 2)}',
+            size: 24.sp,
+            color: AppTheme.color000,
+            weight: FontWeight.bold,
+          ),
+        ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
+      ].toRow(),
+      if (controller.currentTab != 0)
+        ImgWidget(path: 'assets/images/assets6.png', width: 48.w, height: 48.w).onTap(() {
+          Get.toNamed(AppRoutes.transfer);
+        }),
+    ]
+        .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
+        .paddingAll(30.w)
+        .tight(width: 690.w)
+        .decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(10.w),
+        )
+        .marginOnly(bottom: 30.w);
+  }
+
   // 资产列表
   Widget _buildAssetsList() {
     return <Widget>[
@@ -410,6 +458,111 @@ class AssetsPage extends GetView<AssetsController> {
     ].toColumn();
   }
 
+  // 理财账户列表
+  Widget _buildlicaiList() {
+    return <Widget>[
+      <Widget>[
+        <Widget>[
+          Icon(
+            Icons.check_circle,
+            size: 32.w,
+            color: controller.isHideAssetsPageBalance ? AppTheme.primary : AppTheme.color000,
+          ),
+          SizedBox(
+            width: 10.w,
+          ),
+          TextWidget.body(
+            '隐藏零余额资产'.tr,
+            size: 20.sp,
+            color: AppTheme.color000,
+          ),
+        ].toRow().onTap(() {
+          controller.hideAssetsPageBalance();
+        }),
+        if (!controller.isShowSearch)
+          Icon(Icons.search, size: 32.sp, color: AppTheme.color000).onTap(() {
+            controller.changeShowSearch(true);
+          }),
+        if (controller.isShowSearch)
+          <Widget>[
+            InputWidget(
+              prefix: Icon(
+                Icons.search,
+                size: 32.sp,
+                color: AppTheme.color999,
+              ),
+              placeholder: "请输入搜索关键词".tr,
+              controller: controller.searchController,
+            ).expanded(),
+          ]
+              .toRow(crossAxisAlignment: CrossAxisAlignment.center)
+              .paddingHorizontal(20.w)
+              .width(320.w)
+              .backgroundColor(AppTheme.blockBgColor)
+              .clipRRect(all: 10.w),
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(height: 80.w),
+
+      // 列表
+      for (var item in controller.licaiCoinList)
+        // 如果isHideAssetsPageBalance为true，则隐藏余额==0的资产，否则就全部显示
+        if (!controller.isHideAssetsPageBalance || (double.tryParse(item.usableBalance?.toString() ?? '0') ?? 0) > 0)
+          <Widget>[
+            <Widget>[
+              <Widget>[
+                ImgWidget(
+                  path: item.image ?? '',
+                  width: 56.w,
+                  height: 56.w,
+                  radius: 28.w,
+                ),
+                SizedBox(
+                  width: 20.w,
+                ),
+                TextWidget.body(
+                  item.coinName ?? '',
+                  size: 26.sp,
+                  color: AppTheme.color000,
+                )
+              ].toRow(),
+              <Widget>[
+                TextWidget.body(
+                  formatDecimal(item.usableBalance),
+                  size: 26.sp,
+                  color: AppTheme.color000,
+                ),
+                SizedBox(
+                  height: 10.w,
+                ),
+                TextWidget.body(
+                  '≈ ${formatDecimal(item.usdEstimate, toFixed: 2)}',
+                  size: 24.sp,
+                  color: AppTheme.color8B8B8B,
+                ),
+              ].toColumn(crossAxisAlignment: CrossAxisAlignment.end, mainAxisAlignment: MainAxisAlignment.center),
+            ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
+            SizedBox(
+              height: 30.w,
+            ),
+            <Widget>[
+              TextWidget.body(
+                '冻结资产'.tr,
+                size: 24.sp,
+                color: AppTheme.color999,
+                textAlign: TextAlign.right,
+              ),
+              TextWidget.body(
+                item.freezeBalance.toString(),
+                size: 24.sp,
+                color: AppTheme.color000,
+                textAlign: TextAlign.right,
+              ),
+            ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
+          ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingVertical(30.w).border(bottom: 1, color: AppTheme.dividerColor).onTap(() {
+            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': item.coinName, 'image': item.image});
+          })
+    ].toColumn();
+  }
+
   // 主视图
   Widget _buildView() {
     return <Widget>[
@@ -422,6 +575,7 @@ class AssetsPage extends GetView<AssetsController> {
           if (controller.currentTab == 0) _buildAssetsStatistics().paddingHorizontal(30.w),
           if (controller.currentTab == 1) _buildContractAccount().paddingHorizontal(30.w),
           if (controller.currentTab == 2) _buildMinerAccount().paddingHorizontal(30.w),
+          if (controller.currentTab == 3) _buildlicai().paddingHorizontal(30.w),
         ].toColumn(),
 
       // 游戏模块
@@ -573,6 +727,7 @@ class AssetsPage extends GetView<AssetsController> {
 
       // 资产币种列表
       if (controller.currentTab == 0) _buildAssetsList().paddingHorizontal(30.w),
+      if (controller.currentTab == 3) _buildlicaiList().paddingHorizontal(30.w),
       SizedBox(
         height: 150.w,
       ),

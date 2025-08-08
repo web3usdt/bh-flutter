@@ -1,7 +1,8 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class MiningController extends GetxController {
   MiningController();
@@ -9,7 +10,7 @@ class MiningController extends GetxController {
   MiningUserinfoModel miningUserinfo = MiningUserinfoModel();
   // 更多功能
   List<Map<String, dynamic>> moreList = [
-    {'title': '我的矿机'.tr, 'icon': 'assets/images/mining27.png', 'route': AppRoutes.myMining},
+    // {'title': '我的矿机'.tr, 'icon': 'assets/images/mining27.png', 'route': AppRoutes.myMining},
     {'title': '矿机产出'.tr, 'icon': 'assets/images/mining28.png', 'route': AppRoutes.miningOutput},
     {
       'title': '算力明细'.tr,
@@ -49,11 +50,24 @@ class MiningController extends GetxController {
 
   // 新人首次领取矿机
   getMiningNewUserPower() async {
-    Loading.show();
-    var res = await MiningApi.getMiningNewUserPower();
-    if (res) {
-      Loading.success('领取成功'.tr);
-      _initData();
-    }
+    showGeneralDialog(
+      context: Get.context!,
+      pageBuilder: (BuildContext buildContext, Animation<double> animation, Animation<double> secondaryAnimation) {
+        return DialogWidget(
+          title: '激活矿机'.tr,
+          description: '激活矿机需要扣除50USDT，是否继续？'.tr,
+          confirmText: '确定'.tr,
+          cancelText: '取消'.tr,
+          onConfirm: () async {
+            Loading.show();
+            var res = await MiningApi.getMiningNewUserPower();
+            Get.back();
+            if (res) {
+              Loading.success('激活成功'.tr);
+              _initData();
+            }
+          });
+      },
+    );
   }
 }

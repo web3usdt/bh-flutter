@@ -117,6 +117,7 @@ export 'assets/assets_miner_account_model.dart';
 export 'assets/assets_personal_account_model.dart';
 export 'assets/assets_record_list_model.dart';
 export 'assets/assets_record_balance_model.dart';
+export 'assets/assets_licai_model.dart';
 
 // 首页模块
 export 'home/home_kline_req.dart';

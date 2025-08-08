@@ -1,7 +1,7 @@
 import 'package:bottom_picker/bottom_picker.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:get/get.dart';
 
 /// 选择器工具类

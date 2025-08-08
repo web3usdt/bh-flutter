@@ -1,8 +1,8 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:happy/pages/mine/develop_mode/controller.dart';
+import 'package:BBIExchange/pages/mine/develop_mode/controller.dart';
 import 'package:tdesign_flutter/tdesign_flutter.dart';
 import 'index.dart';
 
@@ -36,7 +36,7 @@ class LoginPage extends GetView<LoginController> {
       ).onTap(() => Get.find<DevelopModeController>().switchTestEnv()),
       SizedBox(height: 20.w),
       TextWidget.body(
-        'Hello!欢迎来到HAPPY'.tr,
+        'Hello!欢迎来到BBI Exchange'.tr,
         size: 28.sp,
         color: AppTheme.color000,
       ),
@@ -158,21 +158,30 @@ class LoginPage extends GetView<LoginController> {
         onTap: controller.submit,
       ).marginOnly(bottom: 30.w, top: 40.w),
       <Widget>[
-        ImgWidget(path: 'assets/images/home24.png', width: 24.w,height: 24.w,),
+        ImgWidget(
+          path: 'assets/images/home24.png',
+          width: 24.w,
+          height: 24.w,
+        ),
         TextWidget.body(
           '解绑谷歌验证'.tr,
           size: 26.sp,
           color: AppTheme.color000,
         ),
-        ImgWidget(path: 'assets/images/home22.png', width: 20.w,height: 20.w,),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
-      .paddingHorizontal(30.w)
-      .tight(height: 68.w)
-      .decorated(
-        border: Border.all(color: AppTheme.borderLine, width: 1),
-        borderRadius: BorderRadius.circular(34.w),
-      )
-      .onTap(() => Get.toNamed('/removeGooglePage')),
+        ImgWidget(
+          path: 'assets/images/home22.png',
+          width: 20.w,
+          height: 20.w,
+        ),
+      ]
+          .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
+          .paddingHorizontal(30.w)
+          .tight(height: 68.w)
+          .decorated(
+            border: Border.all(color: AppTheme.borderLine, width: 1),
+            borderRadius: BorderRadius.circular(34.w),
+          )
+          .onTap(() => Get.toNamed('/removeGooglePage')),
 
       SizedBox(height: 20.w),
       <Widget>[

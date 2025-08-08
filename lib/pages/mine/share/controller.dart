@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:ducafe_ui_core/ducafe_ui_core.dart';
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

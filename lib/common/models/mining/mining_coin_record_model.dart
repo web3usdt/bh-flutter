@@ -1,4 +1,4 @@
-import 'package:happy/common/utils/data_utils.dart';
+import 'package:BBIExchange/common/utils/data_utils.dart';
 
 class MiningCoinRecordModel {
   int? id;

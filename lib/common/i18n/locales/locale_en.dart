@@ -38,7 +38,7 @@ Map<String, String> localeEn = {
 
   // Login module related
   '登录': 'Login',
-  'Hello!欢迎来到HAPPY': 'Hello! Welcome to HAPPY',
+  'Hello!欢迎来到BBI Exchange': 'Hello! Welcome to BBI Exchange',
   '账号': 'Account',
   '请输入账号': 'Please enter account',
   '登陆密码': 'Login Password',
@@ -658,4 +658,7 @@ Map<String, String> localeEn = {
   '游戏账户': 'Game Account',
   '待结算': 'Pending Settlement',
   '未中奖': 'No Win',
+  '激活矿机': 'Activate Mining Machine',
+  '激活矿机需要扣除50USDT，是否继续？': 'Activating the mining machine requires deducting 50 USDT, continue?',
+  '激活成功': 'Activation Successful',
 };

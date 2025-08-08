@@ -1,7 +1,7 @@
-import 'package:happy/common/index.dart';
+import 'package:BBIExchange/common/index.dart';
 
 class AssetsWdithdrawBalanceModel {
-  int? usableBalance;
+  String? usableBalance;
   String? withdrawalFee;
   String? withdrawalMin;
   String? withdrawalMax;
@@ -35,7 +35,7 @@ class AssetsWdithdrawBalanceModel {
 
   factory AssetsWdithdrawBalanceModel.fromJson(Map<String, dynamic> json) {
     return AssetsWdithdrawBalanceModel(
-      usableBalance: DataUtils.toInt(json['usable_balance']),
+      usableBalance: DataUtils.toStr(json['usable_balance']),
       withdrawalFee: DataUtils.toStr(json['withdrawal_fee']),
       withdrawalMin: DataUtils.toStr(json['withdrawal_min']),
       withdrawalMax: DataUtils.toStr(json['withdrawal_max']),
