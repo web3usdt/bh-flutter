@@ -19,6 +19,14 @@ class MiningApi {
     return true;
   }
 
+  // 激活矿机
+  static Future<bool> activateMining() async {
+    await WPHttpService.to.post(
+      '/api/app/user/machineActivate',
+    );
+    return true;
+  }
+
   // 获取我的矿机记录
   static Future<List<MiningRecordModel>> getMiningRecordList(PageListReq req) async {
     var res = await WPHttpService.to.post(

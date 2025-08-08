@@ -240,7 +240,7 @@ class MiningPage extends GetView<MiningController> {
         SizedBox(
           height: 20.w,
         ),
-        if (controller.miningUserinfo.isNews == 0)
+        if (controller.miningUserinfo.minerCount == 0 || controller.miningUserinfo.minerCount == -1)
           ButtonWidget(
             text: '激活矿机'.tr,
             height: 64,

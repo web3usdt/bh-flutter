@@ -12,6 +12,7 @@ class AssetsApi {
 
   // 获取资产流水列表
   static Future<List<AssetsRecordListModel>> getRecordList(PageListReq req) async {
+    print('获取资产流水列表参数: ${req.toJson()}');
     final res = await WPHttpService.to.get(
       '/api/app/user/getWalletLogs',
       params: req.toJson(),
@@ -27,6 +28,20 @@ class AssetsApi {
   static Future<List<AssetsRecordListModel>> getContractRecordList(PageListReq req) async {
     final res = await WPHttpService.to.get(
       '/api/app/contract/accountFlow',
+      params: req.toJson(),
+    );
+    final data = res.data['data']['data'];
+    if (data != null && data is List && data.isNotEmpty) {
+      return data.map((e) => AssetsRecordListModel.fromJson(e)).toList();
+    }
+    return [];
+  }
+
+  // 获取理财账户流水列表
+  static Future<List<AssetsRecordListModel>> getLicaiRecordList(PageListReq req) async {
+    print('获取理财账户流水列表参数: ${req.toJson()}');
+    final res = await WPHttpService.to.get(
+      '/api/app/user/getEarnLogs',
       params: req.toJson(),
     );
     final data = res.data['data']['data'];

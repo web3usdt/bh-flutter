@@ -6,6 +6,7 @@ class AssetsRecordController extends GetxController {
   AssetsRecordController();
   String image = '';
   String coinName = '';
+  String title = '';
   List<AssetsRecordListModel> items = [];
   AssetsRecordBalanceModel balance = AssetsRecordBalanceModel();
 
@@ -13,10 +14,16 @@ class AssetsRecordController extends GetxController {
     if (Get.arguments != null) {
       coinName = Get.arguments['coinName'] ?? '';
       image = Get.arguments['image'] ?? '';
-      if (coinName == '合约账户') {
-        coinName = '合约账户'.tr;
-      } else if (coinName == '挖矿账户') {
-        coinName = '挖矿账户'.tr;
+      title = Get.arguments['title'] ?? '';
+      print('title: $title');
+      if (title == '合约账户') {
+        title = '合约账户'.tr;
+      } else if (title == '挖矿账户') {
+        title = '挖矿账户'.tr;
+      } else if (title == '理财账户') {
+        title = '理财账户'.tr;
+      } else if (title == '资金账户') {
+        title = '资金账户'.tr;
       }
     }
     update(["assetsRecord"]);
@@ -56,13 +63,18 @@ class AssetsRecordController extends GetxController {
   int _page = 1;
   Future<bool> _loadNewsSell(bool isRefresh) async {
     List<AssetsRecordListModel> result = [];
-    if (coinName == '合约账户') {
+    if (title == '合约账户') {
       result = await AssetsApi.getContractRecordList(PageListReq(
         page: isRefresh ? 1 : _page,
       ));
-    } else if (coinName == '挖矿账户') {
+    } else if (title == '挖矿账户') {
       result = await AssetsApi.getRecordList(PageListReq(page: isRefresh ? 1 : _page, coinName: 'XFB', accountType: '5'));
-    } else {
+    } else if (title == '理财流水') {
+      result = await AssetsApi.getLicaiRecordList(PageListReq(
+        page: isRefresh ? 1 : _page,
+        coinName: coinName,
+      ));
+    } else if (title == '资金流水') {
       result = await AssetsApi.getRecordList(PageListReq(
         page: isRefresh ? 1 : _page,
         coinName: coinName,

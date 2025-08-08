@@ -54,19 +54,19 @@ class MiningController extends GetxController {
       context: Get.context!,
       pageBuilder: (BuildContext buildContext, Animation<double> animation, Animation<double> secondaryAnimation) {
         return DialogWidget(
-          title: '激活矿机'.tr,
-          description: '激活矿机需要扣除50USDT，是否继续？'.tr,
-          confirmText: '确定'.tr,
-          cancelText: '取消'.tr,
-          onConfirm: () async {
-            Loading.show();
-            var res = await MiningApi.getMiningNewUserPower();
-            Get.back();
-            if (res) {
-              Loading.success('激活成功'.tr);
-              _initData();
-            }
-          });
+            title: '激活矿机'.tr,
+            description: '激活矿机需要扣除50USDT，是否继续？'.tr,
+            confirmText: '确定'.tr,
+            cancelText: '取消'.tr,
+            onConfirm: () async {
+              Loading.show();
+              var res = await MiningApi.activateMining();
+              Get.back();
+              if (res) {
+                Loading.success('激活成功'.tr);
+                _initData();
+              }
+            });
       },
     );
   }

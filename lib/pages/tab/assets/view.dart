@@ -229,7 +229,7 @@ class AssetsPage extends GetView<AssetsController> {
               color: AppTheme.color999,
             ),
           ].toRow().onTap(() {
-            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': '合约账户'});
+            Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '合约账户'});
           }),
           SizedBox(
             height: 10.w,
@@ -308,7 +308,7 @@ class AssetsPage extends GetView<AssetsController> {
             )
             .marginOnly(bottom: 30.w)
             .onTap(() {
-          Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': '挖矿账户'});
+          Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '挖矿账户'});
         }),
     ].toColumn();
   }
@@ -322,11 +322,23 @@ class AssetsPage extends GetView<AssetsController> {
           width: 20.w,
         ),
         <Widget>[
-          TextWidget.body(
-            '理财账户(USDT)'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
+          <Widget>[
+            TextWidget.body(
+              '理财账户(USDT)'.tr,
+              size: 20.sp,
+              color: AppTheme.color999,
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 18.w,
+              color: AppTheme.color999,
+            ),
+          ].toRow().onTap(() {
+            Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '理财账户'});
+          }),
           SizedBox(
             height: 10.w,
           ),
@@ -453,7 +465,7 @@ class AssetsPage extends GetView<AssetsController> {
               ),
             ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
           ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingVertical(30.w).border(bottom: 1, color: AppTheme.dividerColor).onTap(() {
-            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': item.coinName, 'image': item.image});
+            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': item.coinName, 'image': item.image, 'title': '资金流水'});
           })
     ].toColumn();
   }
@@ -558,7 +570,7 @@ class AssetsPage extends GetView<AssetsController> {
               ),
             ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
           ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingVertical(30.w).border(bottom: 1, color: AppTheme.dividerColor).onTap(() {
-            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': item.coinName, 'image': item.image});
+            Get.toNamed(AppRoutes.assetsRecord, arguments: {'coinName': item.coinName, 'image': item.image, 'title': '理财流水'});
           })
     ].toColumn();
   }
