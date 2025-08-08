@@ -1,3 +1,5 @@
+import 'package:BBIExchange/common/index.dart';
+
 class AssetsRecordBalanceModel {
   String? usableBalance;
   String? freezeBalance;
@@ -11,9 +13,9 @@ class AssetsRecordBalanceModel {
 
   factory AssetsRecordBalanceModel.fromJson(Map<String, dynamic> json) {
     return AssetsRecordBalanceModel(
-      usableBalance: json['usable_balance']?.toString(),
-      freezeBalance: json['freeze_balance']?.toString(),
-      totalAssets: json['total_assets']?.toString(),
+      usableBalance: DataUtils.toStr(json['usable_balance']),
+      freezeBalance: DataUtils.toStr(json['freeze_balance']),
+      totalAssets: DataUtils.toStr(json['total_assets']),
     );
   }
 

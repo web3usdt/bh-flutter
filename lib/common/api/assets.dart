@@ -1,18 +1,18 @@
 import '../index.dart';
 
 class AssetsApi {
-  // 获取资产流水余额
-  static Future<AssetsRecordBalanceModel> getRecordBalance(String symbol) async {
+  // 获取资金账户币种余额
+  static Future<AssetsRecordBalanceModel> getRecordBalance(String symbol, String type) async {
     final res = await WPHttpService.to.post(
       '/api/app/user/appTokenAssets',
-      data: {'coin_name': symbol},
+      data: {'coin_name': symbol, 'account_type': type},
     );
     return AssetsRecordBalanceModel.fromJson(res.data['data']);
   }
 
-  // 获取资产流水列表
+  // 获取资金账户币种流水列表
   static Future<List<AssetsRecordListModel>> getRecordList(PageListReq req) async {
-    print('获取资产流水列表参数: ${req.toJson()}');
+    print('获取资金账户币种流水列表: ${req.toJson()}');
     final res = await WPHttpService.to.get(
       '/api/app/user/getWalletLogs',
       params: req.toJson(),
@@ -24,7 +24,7 @@ class AssetsApi {
     return [];
   }
 
-  // 获取合约账户流水列表
+  // 获取合约账户流水
   static Future<List<AssetsRecordListModel>> getContractRecordList(PageListReq req) async {
     final res = await WPHttpService.to.get(
       '/api/app/contract/accountFlow',
@@ -37,9 +37,9 @@ class AssetsApi {
     return [];
   }
 
-  // 获取理财账户流水列表
+  // 获取理财账户币种流水
   static Future<List<AssetsRecordListModel>> getLicaiRecordList(PageListReq req) async {
-    print('获取理财账户流水列表参数: ${req.toJson()}');
+    print('获取理财账户币种流水: ${req.toJson()}');
     final res = await WPHttpService.to.get(
       '/api/app/user/getEarnLogs',
       params: req.toJson(),
@@ -234,7 +234,7 @@ class AssetsApi {
     return [];
   }
 
-  // 获取个人账户
+  // 获取资金账户总资产usdt
   static Future<AssetsPersonalAccountModel> getPersonalAccount() async {
     final res = await WPHttpService.to.post(
       '/api/app/user/personalAssets',
@@ -242,7 +242,7 @@ class AssetsApi {
     return AssetsPersonalAccountModel.fromJson(res.data['data']);
   }
 
-  // 获取挖矿账户
+  // 获取挖矿账户总资产usdt
   static Future<List<AssetsMinerAccountModel>> getMinerAccount() async {
     final res = await WPHttpService.to.get(
       '/api/app/user/minerAccount',
@@ -254,7 +254,7 @@ class AssetsApi {
     return [];
   }
 
-  // 获取理财账户
+  // 获取理财账户总资产usdt
   static Future<AssetsLicaiModel> getlicaiAccount() async {
     final res = await WPHttpService.to.get(
       '/api/app/user/earnAccount',

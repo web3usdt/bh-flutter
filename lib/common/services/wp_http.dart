@@ -133,8 +133,7 @@ class WPHttpService extends GetxService {
 class RequestInterceptors extends Interceptor {
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    print("Get 参数: ${options.queryParameters}");
-    print("Post 参数: ${options.data}");
+    print("请求URL: ${options.uri},请求方式: ${options.method},请求参数: ${options.method == 'GET' ? options.queryParameters : options.data}");
     // 使用 log.d 打印详细的请求参数，并添加 [Network] 标签
     // http header 头加入 Authorization
     var lang = '';
@@ -184,12 +183,7 @@ class RequestInterceptors extends Interceptor {
 
   @override
   void onResponse(Response response, ResponseInterceptorHandler handler) {
-    // 只处理json返回
-
-    // 使用 log.i 打印一般信息，并添加 [Network] 标签
-    // log.i('[Network] response: ${response.requestOptions.uri}\n'
-    //     'method: ${response.requestOptions.method}\n'
-    //     'response: \n${jsonEncode(response.data)}');
+    print("响应URL: ${response.requestOptions.uri},响应状态码: ${response.statusCode},响应数据: ${response.data}");
     if (response.statusCode == 200 || response.statusCode == 201) {
       // 判断后端自定义code
       if (response.data is Map && response.data.containsKey('code')) {
@@ -227,7 +221,8 @@ class RequestInterceptors extends Interceptor {
     final bool shouldToast = err.requestOptions.extra['shouldToast'] as bool? ?? true;
     final String path = (err.requestOptions.extra['path'] as String? ?? '');
     // 打印错误的请求URL，使用 log.e 打印错误信息，并添加 [Network] 标签
-    print('请求错误 URL: ${err.requestOptions.uri}，内容：${err.response?.data}，状态码：${err.response?.statusCode}');
+    print(
+        '请求错误 URL: ${err.requestOptions.uri}，请求方式: ${err.requestOptions.method}，请求参数: ${err.requestOptions.method == 'GET' ? err.requestOptions.queryParameters : err.requestOptions.data}，响应数据: ${err.response?.data}，状态码：${err.response?.statusCode}');
 
     String message = '';
     bool shouldShowError = true;

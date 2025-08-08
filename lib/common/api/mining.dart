@@ -7,7 +7,6 @@ class MiningApi {
     var res = await WPHttpService.to.post(
       '/api/app/miner/user_info',
     );
-    print('getMiningUserinfo: ${res.data['data']}');
     return MiningUserinfoModel.fromJson(res.data['data']);
   }
 
