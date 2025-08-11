@@ -398,7 +398,7 @@ Map<String, String> localeEn = {
   '获取算力': 'Get Hash Rate',
   '您将销毁大约': 'You will destroy approximately',
   '汇率参考：1算力≈': 'Exchange rate reference: 1 hash rate ≈',
-  'XFB': 'XFB',
+  'BB': 'BB',
   '钱包余额': 'Wallet Balance',
   '请选择销毁比例': 'Please select destruction ratio',
   '请选择销毁数量': 'Please select destruction quantity',
@@ -447,7 +447,7 @@ Map<String, String> localeEn = {
   '矿机产出': 'Mining Output',
   '预计今日收益': 'Expected Today\'s Earnings',
   '总收益': 'Total Earnings',
-  '我的佣金(XFB)': 'My Commission (XFB)',
+  '我的佣金(BB)': 'My Commission (BB)',
   '昨日佣金收益': 'Yesterday\'s Commission',
   '新人矿机算力': 'New User Hash Rate',
   '立即领取': 'Claim Now',
@@ -661,4 +661,5 @@ Map<String, String> localeEn = {
   '激活矿机': 'Activate Mining Machine',
   '激活矿机需要扣除50USDT，是否继续？': 'Activating the mining machine requires deducting 50 USDT, continue?',
   '激活成功': 'Activation Successful',
+  '激活矿机需要扣除10USDT，是否继续？': 'Activating the mining machine requires deducting 10 USDT, continue?',
 };

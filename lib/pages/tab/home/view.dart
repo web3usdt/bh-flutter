@@ -357,7 +357,7 @@ class HomePage extends GetView<HomeController> {
               color: AppTheme.color8B8B8B,
               textAlign: TextAlign.center,
             ),
-            if (item.pairName == 'XFB/USDT')
+            if (item.pairName == 'BB/USDT')
               <Widget>[
                 SizedBox(
                   width: 5.w,
@@ -527,7 +527,7 @@ class HomePage extends GetView<HomeController> {
                   size: 20.sp,
                   color: AppTheme.color8B8B8B,
                 ),
-                if (item.pairName == 'XFB/USDT')
+                if (item.pairName == 'BB/USDT')
                   <Widget>[
                     SizedBox(
                       width: 5.w,

@@ -72,7 +72,7 @@ class TeamPage extends GetView<TeamController> {
           TextWidget.body('日销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         <Widget>[
-          TextWidget.body('${controller.miningTeamInfo.destroyDayXfb ?? 0} XFB', size: 20.sp, color: AppTheme.color000),
+          TextWidget.body('${controller.miningTeamInfo.destroyDayXfb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
           SizedBox(
             height: 10.w,
           ),
@@ -88,7 +88,7 @@ class TeamPage extends GetView<TeamController> {
           TextWidget.body('月销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
         ].toRow(),
         <Widget>[
-          TextWidget.body('${controller.miningTeamInfo.destroyMonthXfb ?? 0} XFB', size: 20.sp, color: AppTheme.color000),
+          TextWidget.body('${controller.miningTeamInfo.destroyMonthXfb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
           SizedBox(
             height: 10.w,
           ),

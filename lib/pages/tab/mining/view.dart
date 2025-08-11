@@ -186,7 +186,7 @@ class MiningPage extends GetView<MiningController> {
             width: 20.w,
           ),
           TextWidget.body(
-            '我的佣金(XFB)'.tr,
+            '我的佣金(BB)'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),

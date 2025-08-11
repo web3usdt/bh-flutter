@@ -55,7 +55,7 @@ class MiningController extends GetxController {
       pageBuilder: (BuildContext buildContext, Animation<double> animation, Animation<double> secondaryAnimation) {
         return DialogWidget(
             title: '激活矿机'.tr,
-            description: '激活矿机需要扣除50USDT，是否继续？'.tr,
+            description: miningUserinfo.minerCount == 0 ? '激活矿机需要扣除10USDT，是否继续？'.tr : '激活矿机需要扣除50USDT，是否继续？'.tr,
             confirmText: '确定'.tr,
             cancelText: '取消'.tr,
             onConfirm: () async {

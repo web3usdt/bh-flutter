@@ -49,7 +49,7 @@ class SubscribeController extends GetxController {
   HomeSubscribeInfoModel subscribeInfo = HomeSubscribeInfoModel();
   // 总价
   double total = 0;
-  // 1U = *XFB
+  // 1U = *BB
   double proportionAmount = 0;
 
   _initData() async {

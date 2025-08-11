@@ -9,9 +9,9 @@ class MiningTeamInfoModel {
   String? inviteUrl;
   int? inviteEffectiveHelpNum;
   int? validRef;
-  double? destroyDayXfb;
+  double? destroyDayBb;
   int? destroyDayU;
-  double? destroyMonthXfb;
+  double? destroyMonthBb;
   int? destroyMonthU;
   int? teamMiner;
 
@@ -24,9 +24,9 @@ class MiningTeamInfoModel {
     this.inviteUrl,
     this.inviteEffectiveHelpNum,
     this.validRef,
-    this.destroyDayXfb,
+    this.destroyDayBb,
     this.destroyDayU,
-    this.destroyMonthXfb,
+    this.destroyMonthBb,
     this.destroyMonthU,
     this.teamMiner,
   });
@@ -41,9 +41,9 @@ class MiningTeamInfoModel {
       inviteUrl: DataUtils.toStr(json['invite_url']),
       inviteEffectiveHelpNum: DataUtils.toInt(json['invite_effective_help_num']),
       validRef: DataUtils.toInt(json['valid_ref']),
-      destroyDayXfb: DataUtils.toDouble(json['destroy_day_xfb']),
+      destroyDayBb: DataUtils.toDouble(json['destroy_day_bb']),
       destroyDayU: DataUtils.toInt(json['destroy_day_u']),
-      destroyMonthXfb: DataUtils.toDouble(json['destroy_month_xfb']),
+      destroyMonthBb: DataUtils.toDouble(json['destroy_month_bb']),
       destroyMonthU: DataUtils.toInt(json['destroy_month_u']),
       teamMiner: DataUtils.toInt(json['team_miner']),
     );
@@ -58,9 +58,9 @@ class MiningTeamInfoModel {
         'invite_url': inviteUrl,
         'invite_effective_help_num': inviteEffectiveHelpNum,
         'valid_ref': validRef,
-        'destroy_day_xfb': destroyDayXfb,
+        'destroy_day_bb': destroyDayBb,
         'destroy_day_u': destroyDayU,
-        'destroy_month_xfb': destroyMonthXfb,
+        'destroy_month_bb': destroyMonthBb,
         'destroy_month_u': destroyMonthU,
         'team_miner': teamMiner,
       };

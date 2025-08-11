@@ -66,7 +66,7 @@ class GetPowerPage extends GetView<GetPowerController> {
         TextWidget.body('您将销毁大约'.tr, size: 26.sp, color: AppTheme.color000).marginOnly(bottom: 20.w),
         <Widget>[
           TextWidget.body(controller.usedCoin.toString(), size: 26.sp, color: AppTheme.color000),
-          TextWidget.body('XFB', size: 26.sp, color: AppTheme.color000),
+          TextWidget.body('BB', size: 26.sp, color: AppTheme.color000),
         ]
             .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
             .paddingHorizontal(30.w)
@@ -76,7 +76,7 @@ class GetPowerPage extends GetView<GetPowerController> {
             .marginOnly(bottom: 30.w),
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
 
-      TextWidget.body('${'汇率参考：1算力≈'.tr}${controller.miningGetpower.peToPower}XFB', size: 24.sp, color: AppTheme.color000),
+      TextWidget.body('${'汇率参考：1算力≈'.tr}${controller.miningGetpower.peToPower}BB', size: 24.sp, color: AppTheme.color000),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingAll(30.w).backgroundColor(AppTheme.blockBgColor).clipRRect(all: 10.w);
   }
 

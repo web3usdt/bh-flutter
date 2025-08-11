@@ -333,7 +333,7 @@ class CoinController extends GetxController {
     final balanceMap = await CoinApi.coinBalance(pairName); // pairName 是当前交易对
     currentCoinBalance = balanceMap[coinName]; // 当前币种余额
     // print('当前币种余额=: ${currentCoinBalance?.coinName}');
-    // pairName = 'XFB/USDT'
+    // pairName = 'BB/USDT'
     // targetCoinBalance = USDT
     targetCoinBalance = balanceMap[pairName.split('/').last]; // 目标币种余额（如USDT，可根据实际业务调整）
     // print('目标币种余额=: ${targetCoinBalance?.coinName}');

@@ -11,7 +11,7 @@ class AssetsPersonalAccountModel {
   String? totalAssetsBtc;
   int? priceDecimals;
   int? qtyDecimals;
-  String? minerAccountXfb;
+  String? minerAccountBb;
   String? gameAccountUsd;
 
   AssetsPersonalAccountModel({
@@ -25,7 +25,7 @@ class AssetsPersonalAccountModel {
     this.totalAssetsBtc,
     this.priceDecimals,
     this.qtyDecimals,
-    this.minerAccountXfb,
+    this.minerAccountBb,
     this.gameAccountUsd,
   });
 
@@ -41,7 +41,7 @@ class AssetsPersonalAccountModel {
       totalAssetsBtc: json['total_assets_btc']?.toString(),
       priceDecimals: DataUtils.toInt(json['priceDecimals']),
       qtyDecimals: DataUtils.toInt(json['qtyDecimals']),
-      minerAccountXfb: json['miner_account_xfb']?.toString(),
+      minerAccountBb: json['miner_account_bb']?.toString(),
       gameAccountUsd: json['game_account_usd']?.toString(),
     );
   }
@@ -57,7 +57,7 @@ class AssetsPersonalAccountModel {
         'total_assets_btc': totalAssetsBtc,
         'priceDecimals': priceDecimals,
         'qtyDecimals': qtyDecimals,
-        'miner_account_xfb': minerAccountXfb,
+        'miner_account_bb': minerAccountBb,
         'game_account_usd': gameAccountUsd,
       };
 }
