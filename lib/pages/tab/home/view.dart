@@ -268,8 +268,7 @@ class HomePage extends GetView<HomeController> {
             SizedBox(
               height: 20.w,
             ),
-            TextWidget.body('助力时间截止于'.tr, size: 24.sp, color: AppTheme.color8D9094),
-            TextWidget.body('${controller.appActivity.endTime}', size: 24.sp, color: AppTheme.color8D9094),
+            TextWidget.body('邀请好友一起赚收益'.tr, size: 24.sp, color: AppTheme.color8D9094),
           ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingAll(30.w),
           ImgWidget(
             path: 'assets/images/home18.png',

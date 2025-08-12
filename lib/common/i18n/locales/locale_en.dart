@@ -662,4 +662,8 @@ Map<String, String> localeEn = {
   '激活矿机需要扣除50USDT，是否继续？': 'Activating the mining machine requires deducting 50 USDT, continue?',
   '激活成功': 'Activation Successful',
   '激活矿机需要扣除10USDT，是否继续？': 'Activating the mining machine requires deducting 10 USDT, continue?',
+  '速来邀请好友': 'Invite Friends',
+  '别一个人独享！拉好友解锁隐藏福利': 'Don\'t keep it to yourself! Invite friends to unlock hidden benefits',
+  '邀请链接': 'Invitation Link',
+  '邀请好友一起赚收益': 'Invite friends to earn profits together',
 };

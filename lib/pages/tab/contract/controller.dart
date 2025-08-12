@@ -279,8 +279,13 @@ class ContinuousController extends GetxController {
     // 取消监听
     _socketSubscription?.cancel();
     amountController.dispose();
-    pollingTimer?.cancel();
-    print('onClose 关闭轮询');
+
+    // 清除轮询定时器
+    if (pollingTimer != null && pollingTimer!.isActive) {
+      pollingTimer!.cancel();
+      pollingTimer = null;
+      print('onClose 关闭轮询');
+    }
   }
 
   // 轮询接口，每隔五秒获取用户合约收益和当前持有仓位
@@ -294,18 +299,21 @@ class ContinuousController extends GetxController {
 
   // 获取用户合约收益
   getUserMoney({bool shouldToast = true}) async {
+    print('轮训1 ： 获取用户合约收益');
     userMoney = await ContractApi.userMoney(coinName, shouldToast: shouldToast);
     update(["continuous"]);
   }
 
   // 获取当前持有仓位
   getCurrentPosition({bool shouldToast = true}) async {
+    print('轮训2 ： 获取当前持有仓位');
     currentPosition = await ContractApi.currentPosition(isOnlyCurrentPosition ? coinName : '', shouldToast: shouldToast);
     update(["continuous"]);
   }
 
   // 获取当前委托
   getCurrentEntrust({bool shouldToast = true}) async {
+    print('轮训3 ： 获取当前委托');
     currentEntrust = await ContractApi.myAuthorizeList(PageListReq(page: 1), shouldToast: shouldToast);
     update(["continuous"]);
   }

@@ -22,42 +22,11 @@ class MiningPage extends GetView<MiningController> {
         ),
         <Widget>[
           TextWidget.body('HI'.tr, size: 20.sp, color: AppTheme.color8D9094),
-          if (controller.miningUserinfo.level == 1)
-            TextWidget.body(
-              '新手矿工'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
-          if (controller.miningUserinfo.level == 2)
-            TextWidget.body(
-              '正式矿工'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
-          if (controller.miningUserinfo.level == 3)
-            TextWidget.body(
-              '节点矿池'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
-          if (controller.miningUserinfo.level == 4)
-            TextWidget.body(
-              '蜂窝矿池'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
-          if (controller.miningUserinfo.level == 5)
-            TextWidget.body(
-              '超级矿池'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
-          if (controller.miningUserinfo.level == 6)
-            TextWidget.body(
-              '创世矿池'.tr,
-              size: 28.sp,
-              color: AppTheme.color000,
-            ),
+          TextWidget.body(
+            controller.miningUserinfo.levelName ?? '',
+            size: 28.sp,
+            color: AppTheme.color000,
+          ),
         ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
       ].toRow(),
       SizedBox(

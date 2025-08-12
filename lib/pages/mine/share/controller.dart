@@ -17,77 +17,6 @@ class ShareController extends GetxController {
   final GlobalKey qrKey = GlobalKey();
   // 二维码内容
   String qrCodeContent = '';
-  // 进度值
-  int progress = 0;
-  // 活动列表
-  List<UserShareActiveListModel> activeList = [];
-  // 活动信息
-  UserShareActiveInfoModel activeInfo = UserShareActiveInfoModel();
-  // 海报
-  String poster = '';
-
-  // 邀请助力弹窗
-  void showInviteFriendDialog() async {
-    if (poster.isEmpty) {
-      Loading.show();
-      poster = await UserApi.getUserShareActive(activeInfo.batchNo ?? '');
-      Loading.dismiss();
-    }
-
-    Get.dialog(
-      barrierColor: Colors.black.withOpacity(0.7),
-      Dialog(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        insetPadding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 60.w),
-        child: Container(
-          width: 590.w,
-          child: <Widget>[
-            // 弹窗内容
-            Expanded(
-              child: ImgWidget(
-                path: poster,
-                fit: BoxFit.contain, // 按比例缩放
-              ),
-            ),
-            SizedBox(height: 30.w),
-            <Widget>[
-              ButtonWidget(
-                text: '保存海报分享'.tr,
-                width: 240,
-                height: 88,
-                borderRadius: 44,
-                backgroundColor: AppTheme.colorfff,
-                textColor: AppTheme.color000,
-                onTap: () {
-                  saveQrCode();
-                },
-              ),
-              ButtonWidget(
-                text: '复制活动邀请链接'.tr,
-                width: 240,
-                height: 88,
-                borderRadius: 44,
-                backgroundColor: AppTheme.colorfff,
-                textColor: AppTheme.color000,
-                onTap: () {
-                  ClipboardUtils.copy(activeInfo.inviteUrl ?? '');
-                },
-              ),
-            ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
-            SizedBox(height: 60.w),
-            const Icon(
-              Icons.close,
-              size: 32,
-              color: Colors.white,
-            ).onTap(() {
-              Get.back();
-            }),
-          ].toColumn(),
-        ),
-      ),
-    );
-  }
 
   @override
   void onReady() {
@@ -98,10 +27,6 @@ class ShareController extends GetxController {
   _initData() async {
     shareInfo = await UserApi.getUserShareInfo();
     Storage().setJson('shareInfo', shareInfo.toJson());
-    activeList = await UserApi.getUserShareActiveList();
-    var batchNo = activeList.first.batchNo;
-    activeInfo = await UserApi.getUserShareActiveInfo(batchNo ?? '');
-    progress = activeInfo.progress ?? 0;
     update(["share"]);
   }
 
@@ -127,10 +52,10 @@ class ShareController extends GetxController {
 
   // 长按保存二维码
   Future<void> saveQrCode() async {
-    await ImageSaverHelper.saveNetworkImage(
-      poster,
-      fileName: "poster_${DateTime.now().millisecondsSinceEpoch}",
-    );
+    // await ImageSaverHelper.saveNetworkImage(
+    //   poster,
+    //   fileName: "poster_${DateTime.now().millisecondsSinceEpoch}",
+    // );
   }
 
   /*

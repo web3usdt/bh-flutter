@@ -9,6 +9,7 @@ class MiningUserinfoModel {
   double? totalIncome;
   String? todayIncome;
   int? level;
+  String? levelName;
   String? myPower;
   int? isNews;
   int? minerCount;
@@ -23,6 +24,7 @@ class MiningUserinfoModel {
     this.totalIncome,
     this.todayIncome,
     this.level,
+    this.levelName,
     this.myPower,
     this.isNews,
     this.minerCount,
@@ -39,6 +41,7 @@ class MiningUserinfoModel {
       totalIncome: DataUtils.toDouble(json['total_income']),
       todayIncome: DataUtils.toStr(json['today_income']),
       level: DataUtils.toInt(json['level']),
+      levelName: DataUtils.toStr(json['level_name']),
       myPower: DataUtils.toStr(json['my_power']),
       isNews: DataUtils.toInt(json['is_news']),
       minerCount: DataUtils.toInt(json['miner_count']),
@@ -55,6 +58,7 @@ class MiningUserinfoModel {
         'total_income': totalIncome,
         'today_income': todayIncome,
         'level': level,
+        'level_name': levelName,
         'my_power': myPower,
         'is_news': isNews,
         'miner_count': minerCount,

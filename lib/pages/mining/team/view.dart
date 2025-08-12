@@ -127,22 +127,7 @@ class TeamPage extends GetView<TeamController> {
                   width: 10.w,
                 ),
                 <Widget>[
-                  TextWidget.body(
-                      item.level == 1
-                          ? '新手矿工'.tr
-                          : item.level == 2
-                              ? '正式矿工'.tr
-                              : item.level == 3
-                                  ? '节点矿池'.tr
-                                  : item.level == 4
-                                      ? '蜂窝矿池'.tr
-                                      : item.level == 5
-                                          ? '超级矿池'.tr
-                                          : item.level == 6
-                                              ? '创世矿池'.tr
-                                              : '',
-                      size: 18.sp,
-                      color: AppTheme.color000),
+                  TextWidget.body(item.levelName ?? '', size: 18.sp, color: AppTheme.color000),
                 ]
                     .toRow()
                     .paddingHorizontal(12.w)

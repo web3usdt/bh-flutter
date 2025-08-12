@@ -136,9 +136,12 @@ class TransferController extends GetxController {
         getTransferCoinlist();
         break;
       case 1: // 资金账户
-        // 从原始账户列表originalAccountList中找出合约账户、挖矿账户和游戏账户
-        toAccountList =
-            originalAccountList.where((e) => e.id == 2 || e.id == 3 || e.id == 11).toList().map((e) => {'id': e.id, 'name': e.name}).toList();
+        // 从原始账户列表originalAccountList中找出合约账户、挖矿账户和游戏账户，理财账户
+        toAccountList = originalAccountList
+            .where((e) => e.id == 2 || e.id == 3 || e.id == 11 || e.id == 6)
+            .toList()
+            .map((e) => {'id': e.id, 'name': e.name})
+            .toList();
         toAccount = toAccountList.first['name'];
         toAccountId = toAccountList.first['id'];
         getTransferCoinlist();
@@ -151,6 +154,13 @@ class TransferController extends GetxController {
         getTransferCoinlist();
         break;
       case 11: // 游戏账户
+        // 从原始账户列表originalAccountList中找出资金账户
+        toAccountList = originalAccountList.where((e) => e.id == 1).toList().map((e) => {'id': e.id, 'name': e.name}).toList();
+        toAccount = toAccountList.first['name'];
+        toAccountId = toAccountList.first['id'];
+        getTransferCoinlist();
+        break;
+      case 6: // 理财账户
         // 从原始账户列表originalAccountList中找出资金账户
         toAccountList = originalAccountList.where((e) => e.id == 1).toList().map((e) => {'id': e.id, 'name': e.name}).toList();
         toAccount = toAccountList.first['name'];

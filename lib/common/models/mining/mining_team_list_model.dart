@@ -45,6 +45,7 @@ class MiningTeamListModel {
   dynamic optionRebateRate;
   dynamic remark;
   int? level;
+  String? levelName;
   String? totalPower;
   int? minerCount;
   int? minerNoactiveCount;
@@ -107,6 +108,7 @@ class MiningTeamListModel {
     this.optionRebateRate,
     this.remark,
     this.level,
+    this.levelName,
     this.totalPower,
     this.minerCount,
     this.minerNoactiveCount,
@@ -171,6 +173,7 @@ class MiningTeamListModel {
       optionRebateRate: DataUtils.toStr(json['option_rebate_rate']),
       remark: DataUtils.toStr(json['remark']),
       level: DataUtils.toInt(json['level']),
+      levelName: DataUtils.toStr(json['level_name']),
       totalPower: DataUtils.toStr(json['total_power']),
       minerCount: DataUtils.toInt(json['miner_count']),
       minerNoactiveCount: DataUtils.toInt(json['miner_noactive_count']),
@@ -235,6 +238,7 @@ class MiningTeamListModel {
         'option_rebate_rate': optionRebateRate,
         'remark': remark,
         'level': level,
+        'level_name': levelName,
         'total_power': totalPower,
         'miner_count': minerCount,
         'miner_noactive_count': minerNoactiveCount,

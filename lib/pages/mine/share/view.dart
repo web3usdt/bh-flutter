@@ -13,60 +13,19 @@ class SharePage extends GetView<ShareController> {
   // 顶部
   Widget _buildTop(BuildContext context) {
     return <Widget>[
-      // 进度条
-      Stack(
-        alignment: Alignment.center,
-        children: [
-          // 背景圆环
-          SizedBox(
-            width: 300.w,
-            height: 300.w,
-            child: CircularProgressIndicator(
-              value: 1.0,
-              strokeWidth: 16.w,
-              backgroundColor: Colors.transparent,
-              valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.color8D9094),
-            ),
-          ),
-          // 进度圆环
-          SizedBox(
-            width: 300.w,
-            height: 300.w,
-            child: CircularProgressIndicator(
-              value: controller.progress / 100.0, // 将 progress 转换为 0-1 之间的值
-              strokeWidth: 16.w,
-              backgroundColor: Colors.transparent,
-              valueColor: const AlwaysStoppedAnimation<Color>(AppTheme.colorGreen),
-            ),
-          ),
-          // 中间显示进度文字
-          TextWidget.body(
-            '${controller.progress}%',
-            size: 48.sp,
-            color: AppTheme.color000,
-            weight: FontWeight.w600,
-          ),
-        ],
-      ).tight(width: 690.w, height: 400.w),
-      TextWidget.body('${'助力时间截止于'.tr} ${controller.activeInfo.endTime}', size: 28.sp, color: AppTheme.color999).marginOnly(top: 20.w, bottom: 40.w),
-      TextWidget.body('我的邀请码'.tr, size: 24.sp, color: AppTheme.color000),
-      <Widget>[
-        TextWidget.body('${controller.shareInfo.inviteCode}', size: 48.sp, color: AppTheme.color000),
-        SizedBox(
-          width: 10.w,
-        ),
-        Icon(Icons.copy, size: 32.sp, color: AppTheme.color000),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.center).onTap(() {
-        ClipboardUtils.copy(controller.shareInfo.inviteCode ?? '');
-      }).marginOnly(top: 30.w, bottom: 50.w),
-      ButtonWidget(
-        text: '邀请助力'.tr,
-        height: 88,
-        borderRadius: 44,
-        onTap: () {
-          controller.showInviteFriendDialog();
-        },
-      )
+      TextWidget.body('速来邀请好友'.tr, size: 32.sp, color: AppTheme.color000),
+      SizedBox(
+        height: 20.w,
+      ),
+      TextWidget.body('别一个人独享！拉好友解锁隐藏福利'.tr, size: 24.sp, color: AppTheme.color8D9094),
+      SizedBox(
+        height: 40.w,
+      ),
+      ImgWidget(
+        path: 'assets/images/home25.png',
+        width: 410.w,
+        height: 275.w,
+      ),
     ].toColumn();
   }
 
@@ -77,10 +36,10 @@ class SharePage extends GetView<ShareController> {
         TextWidget.body(
           '${controller.shareInfo.inviteUserNum}',
           size: 32.sp,
-          color: AppTheme.color000,
+          color: AppTheme.colorfff,
           weight: FontWeight.w600,
         ),
-        TextWidget.body('助力总人数'.tr, size: 24.sp, color: AppTheme.color999),
+        TextWidget.body('助力总人数'.tr, size: 24.sp, color: AppTheme.colorfff),
       ]
           .toColumn()
           .paddingOnly(top: 30.w, bottom: 30.w)
@@ -90,6 +49,7 @@ class SharePage extends GetView<ShareController> {
           .decorated(
             borderRadius: BorderRadius.circular(10.w),
             border: Border.all(color: AppTheme.borderLine, width: 1),
+            color: AppTheme.primary,
           ),
       <Widget>[
         TextWidget.body(
@@ -128,6 +88,48 @@ class SharePage extends GetView<ShareController> {
             border: Border.all(color: AppTheme.borderLine, width: 1),
           ),
     ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start);
+  }
+
+  // 邀请码
+  Widget _buildInviteCode() {
+    return <Widget>[
+      TextWidget.body('邀请码'.tr, size: 24.sp, color: AppTheme.color8D9094),
+      SizedBox(
+        height: 20.w,
+      ),
+      <Widget>[
+        TextWidget.body('${controller.shareInfo.inviteCode}', size: 26.sp, color: AppTheme.color000),
+        SizedBox(
+          width: 10.w,
+        ),
+        Icon(Icons.copy, size: 28.sp, color: AppTheme.color000),
+      ].toRow().onTap(() {
+        ClipboardUtils.copy(controller.shareInfo.inviteCode ?? '');
+      }),
+
+      SizedBox(
+        height: 40.w,
+      ),
+
+      TextWidget.body('邀请链接'.tr, size: 24.sp, color: AppTheme.color8D9094),
+      SizedBox(
+        height: 20.w,
+      ),
+      <Widget>[
+        TextWidget.body('${controller.shareInfo.inviteUrl}', size: 26.sp, color: AppTheme.color000),
+        SizedBox(
+          height: 10.w,
+        ),
+        Icon(Icons.copy, size: 28.sp, color: AppTheme.color000),
+      ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).onTap(() {
+        ClipboardUtils.copy(controller.shareInfo.inviteUrl ?? '');
+      }),
+    ].toColumn(crossAxisAlignment: CrossAxisAlignment.start)
+    .paddingAll(30.w)
+    .decorated(
+      border: Border.all(color: AppTheme.borderLine),
+      borderRadius: BorderRadius.circular(16.w),
+    );
   }
 
   // 记录
@@ -179,10 +181,6 @@ class SharePage extends GetView<ShareController> {
       SizedBox(
         height: 40.w,
       ).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
-      TDDivider(
-        height: 1,
-        color: AppTheme.dividerColor,
-      ).sliverToBoxAdapter(),
       SizedBox(
         height: 40.w,
       ).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
@@ -190,10 +188,7 @@ class SharePage extends GetView<ShareController> {
       SizedBox(
         height: 40.w,
       ).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
-      TDDivider(
-        height: 16.w,
-        color: AppTheme.dividerColor,
-      ).sliverToBoxAdapter(),
+      _buildInviteCode().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
       SizedBox(
         height: 40.w,
       ).sliverToBoxAdapter().sliverPaddingHorizontal(30.w),

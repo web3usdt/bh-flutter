@@ -349,6 +349,7 @@ class CoinController extends GetxController {
 
   // 获取当前授权
   getCurrentAuthorize() async {
+    print('轮训4 ： 获取当前授权');
     currentAuthorizeItems = await CoinApi.myAuthorizeList(PageListReq(
       page: 1,
     ));

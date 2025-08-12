@@ -90,17 +90,17 @@ class HomeController extends GetxController {
     Storage().setJson('selectedSubscribe', selectedSubscribe!);
 
     // 获取app活动
-    appActivity = await UserApi.getAppActivity();
-    if (appActivity.id != null) {
-      Storage().setJson('appActivity', appActivity);
-      hasShownInviteDialog = Storage().getBool('hasShownInviteDialog');
-      print('hasShownInviteDialog: $hasShownInviteDialog');
-      if (!hasShownInviteDialog) {
-        showInviteFriendDialog();
-        hasShownInviteDialog = true;
-        Storage().setBool('hasShownInviteDialog', hasShownInviteDialog);
-      }
-    }
+    // appActivity = await UserApi.getAppActivity();
+    // if (appActivity.id != null) {
+    //   Storage().setJson('appActivity', appActivity);
+    //   hasShownInviteDialog = Storage().getBool('hasShownInviteDialog');
+    //   print('hasShownInviteDialog: $hasShownInviteDialog');
+    //   if (!hasShownInviteDialog) {
+    //     showInviteFriendDialog();
+    //     hasShownInviteDialog = true;
+    //     Storage().setBool('hasShownInviteDialog', hasShownInviteDialog);
+    //   }
+    // }
 
     final res = await HomeApi.homeDatainfo();
     // 从res.marketList中筛选出coinName == USDT的marketInfoList
@@ -159,8 +159,9 @@ class HomeController extends GetxController {
     selectedSubscribe =
         stringSelectedSubscribe != "" ? HomeSubscribeListModel.fromJson(jsonDecode(stringSelectedSubscribe)) : HomeSubscribeListModel();
 
-    var stringAppActivity = Storage().getString('appActivity');
-    appActivity = stringAppActivity != "" ? UserShareActiveInfoModel.fromJson(jsonDecode(stringAppActivity)) : UserShareActiveInfoModel();
+    // 获取app活动
+    // var stringAppActivity = Storage().getString('appActivity');
+    // appActivity = stringAppActivity != "" ? UserShareActiveInfoModel.fromJson(jsonDecode(stringAppActivity)) : UserShareActiveInfoModel();
 
     update(["home"]);
   }
