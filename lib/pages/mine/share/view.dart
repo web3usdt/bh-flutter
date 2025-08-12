@@ -106,11 +106,9 @@ class SharePage extends GetView<ShareController> {
       ].toRow().onTap(() {
         ClipboardUtils.copy(controller.shareInfo.inviteCode ?? '');
       }),
-
       SizedBox(
         height: 40.w,
       ),
-
       TextWidget.body('邀请链接'.tr, size: 24.sp, color: AppTheme.color8D9094),
       SizedBox(
         height: 20.w,
@@ -124,12 +122,10 @@ class SharePage extends GetView<ShareController> {
       ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).onTap(() {
         ClipboardUtils.copy(controller.shareInfo.inviteUrl ?? '');
       }),
-    ].toColumn(crossAxisAlignment: CrossAxisAlignment.start)
-    .paddingAll(30.w)
-    .decorated(
-      border: Border.all(color: AppTheme.borderLine),
-      borderRadius: BorderRadius.circular(16.w),
-    );
+    ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingAll(30.w).decorated(
+          border: Border.all(color: AppTheme.borderLine),
+          borderRadius: BorderRadius.circular(16.w),
+        );
   }
 
   // 记录

@@ -147,14 +147,7 @@ class TransferPage extends GetView<TransferController> {
             <Widget>[
               TextWidget.body('划转方向'.tr, size: 26.sp, color: AppTheme.color666),
               TextWidget.body(
-                  '${item.drawOutDirection == 'UserWallet'  ? '资金账户'.tr 
-                  : item.drawOutDirection == 'ContractAccount' ? '合约账户'.tr 
-                  : item.drawOutDirection == 'gameAccount' ? '游戏账户'.tr 
-                  : item.drawOutDirection == 'EarnAccount' ? '理财账户'.tr : '挖矿账户'.tr}  - ${item.intoDirection == 'UserWallet' ? '资金账户'.tr 
-                  : item.intoDirection == 'ContractAccount' ? '合约账户'.tr 
-                  : item.intoDirection == 'gameAccount' ? '游戏账户'.tr 
-                  : item.intoDirection == 'EarnAccount' ? '理财账户'.tr  
-                  : '挖矿账户'.tr}',
+                  '${item.drawOutDirection == 'UserWallet' ? '资金账户'.tr : item.drawOutDirection == 'ContractAccount' ? '合约账户'.tr : item.drawOutDirection == 'gameAccount' ? '游戏账户'.tr : item.drawOutDirection == 'EarnAccount' ? '理财账户'.tr : '挖矿账户'.tr}  - ${item.intoDirection == 'UserWallet' ? '资金账户'.tr : item.intoDirection == 'ContractAccount' ? '合约账户'.tr : item.intoDirection == 'gameAccount' ? '游戏账户'.tr : item.intoDirection == 'EarnAccount' ? '理财账户'.tr : '挖矿账户'.tr}',
                   size: 26.sp,
                   color: AppTheme.color000),
             ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),

@@ -491,7 +491,9 @@ class ContinuousPage extends GetView<ContinuousController> {
               if (item.price?.isNotEmpty == true && double.parse(item.price ?? '0') < 1)
                 TextWidget.body(MathUtils.omitTo(item.price ?? '0', 10), size: 20.sp, color: AppTheme.colorRed).positioned(left: 0, top: 5.w),
               TextWidget.body(MathUtils.omitTo(item.amount ?? '0', 2), size: 20.sp, color: AppTheme.color000).positioned(right: 0, top: 5.w),
-            ].toStack().tight(width: 350.w, height: 40.w).marginOnly(bottom: 10.w),
+            ].toStack().tight(width: 350.w, height: 40.w).marginOnly(bottom: 10.w).onTap(() {
+              controller.onTapDepth(item);
+            }),
 
           // 当前价
           <Widget>[
@@ -533,7 +535,9 @@ class ContinuousPage extends GetView<ContinuousController> {
               if (item.price?.isNotEmpty == true && double.parse(item.price ?? '0') < 1)
                 TextWidget.body(MathUtils.omitTo(item.price ?? '0', 10), size: 20.sp, color: AppTheme.colorGreen).positioned(left: 0, top: 5.w),
               TextWidget.body(MathUtils.omitTo(item.amount ?? '0', 2), size: 20.sp, color: AppTheme.color000).positioned(right: 0, top: 5.w),
-            ].toStack().tight(width: 350.w, height: 40.w).marginOnly(bottom: 10.w),
+            ].toStack().tight(width: 350.w, height: 40.w).marginOnly(bottom: 10.w).onTap(() {
+              controller.onTapDepth(item);
+            }),
         ].toColumn().width(330.w);
       },
     );

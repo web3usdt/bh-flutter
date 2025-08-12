@@ -375,12 +375,27 @@ class ContinuousController extends GetxController {
     update(["continuous"]);
   }
 
+  // 点击深度
+  void onTapDepth(dynamic item) {
+    // 如果是限价，赋值给输入框
+    if (selectedOrderType == '普通委托'.tr) {
+      limitPriceController.text = item.price ?? '';
+      onLimitPriceChange(limitPriceController.text);
+    }
+    print('onTapDepth: ${item.price}');
+    update(["continuous"]);
+  }
+
   // 加减号，每次步进0.01
   void onLimitPriceStep(String type) {
     if (type == '+') {
       limitPriceController.text = MathUtils.addDecimal(limitPriceController.text, 0.01, 8);
     } else {
       limitPriceController.text = MathUtils.subtrDecimal(limitPriceController.text, 0.01, 8);
+      // 如果limitPriceController.text小于0，则默认为0
+      if (double.parse(limitPriceController.text) < 0) {
+        limitPriceController.text = '0.00000000';
+      }
     }
     onLimitPriceChange(limitPriceController.text);
   }
