@@ -108,21 +108,21 @@ class ConfigService extends GetxService {
     }
 
     // 如果本地缓存的环境为空，则根据编译模式决定环境
-    // switch (buildMode) {
-    //   case BuildMode.prod: // 生产构建，强制使用生产环境
-    //     curEnv.value = EnvConfig.getEnvByTag('prod');
-    //     break;
-    //   case BuildMode.test: // 测试构建，强制使用测试环境
-    //     curEnv.value = EnvConfig.getEnvByTag('test');
-    //     break;
-    //   case BuildMode.dev:
-    //   default:
-    //     curEnv.value = EnvConfig.getEnvByTag('test1');
-    //     break;
-    // }
+    switch (buildMode) {
+      case BuildMode.prod: // 生产构建，强制使用生产环境
+        curEnv.value = EnvConfig.getEnvByTag('prod');
+        break;
+      case BuildMode.test: // 测试构建，强制使用测试环境
+        curEnv.value = EnvConfig.getEnvByTag('test');
+        break;
+      case BuildMode.dev:
+      default:
+        curEnv.value = EnvConfig.getEnvByTag('test1');
+        break;
+    }
 
     // 使用测试节点
-    curEnv.value = EnvConfig.getEnvByTagTest('ceshi');
+    // curEnv.value = EnvConfig.getEnvByTagTest('ceshi');
   }
 
   // 切换 环境

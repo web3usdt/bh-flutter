@@ -15,21 +15,21 @@ class HomePage extends GetView<HomeController> {
   Widget _buildBanner() {
     return <Widget>[
       SizedBox(
-        width: 690.w,
-        height: 280.w,
+        width:350.w,
+        height: 480.w,
         child: CarouselSlider(
           items: controller.bannerList.map((banner) {
             return <Widget>[
               ImgWidget(
                 path: banner.imgurl ?? '',
-                width: 690.w,
-                height: 280.w,
-              ).tight(width: 690.w, height: 280.w),
+                width: 335.w,
+                height: 480.w,
+              ).tight(width: 335.w, height: 480.w),
             ].toStack();
           }).toList(),
           options: CarouselOptions(
             scrollDirection: Axis.horizontal, // 垂直方向滚动
-            height: 280.w, // 设置高度为文字高度
+            height: 480.w, // 设置高度为文字高度
             viewportFraction: 1.0, // 每个item占满整个viewport
             autoPlay: true, // 自动播放
             autoPlayInterval: const Duration(seconds: 3), // 播放间隔
@@ -50,7 +50,7 @@ class HomePage extends GetView<HomeController> {
         left: 0,
         right: 0,
       ),
-    ].toStack().height(280.w).clipRRect(all: 20.w);
+    ].toStack().height(480.w).clipRRect(all: 20.w);
   }
 
   // 公告栏
@@ -257,25 +257,7 @@ class HomePage extends GetView<HomeController> {
   Widget _buildPromote() {
     return <Widget>[
       <Widget>[
-        <Widget>[
-          <Widget>[
-            TextWidget.body(
-              '推广助力'.tr,
-              size: 40.sp,
-              color: AppTheme.color000,
-              weight: FontWeight.bold,
-            ),
-            SizedBox(
-              height: 20.w,
-            ),
-            TextWidget.body('邀请好友一起赚收益'.tr, size: 24.sp, color: AppTheme.color8D9094),
-          ].toColumn(crossAxisAlignment: CrossAxisAlignment.start).paddingAll(30.w),
-          ImgWidget(
-            path: 'assets/images/home18.png',
-            width: 180.w,
-            height: 180.w,
-          ).positioned(left: 4.w, bottom: 24.w),
-        ].toStack().tight(width: 335.w, height: 480.w)
+        _buildBanner(),
       ]
           .toColumn(crossAxisAlignment: CrossAxisAlignment.start)
           .tight(width: 335.w, height: 480.w)
@@ -328,8 +310,8 @@ class HomePage extends GetView<HomeController> {
             width: 48.w,
             height: 48.w,
           ),
-          TextWidget.body('币币交易'.tr, size: 26.sp, color: AppTheme.color000),
-          TextWidget.body('高效撮合，安全交易！', size: 24.sp, color: AppTheme.color8D9094),
+          TextWidget.body('推广助力'.tr, size: 26.sp, color: AppTheme.color000),
+          TextWidget.body('邀请好友一起赚收益'.tr, size: 24.sp, color: AppTheme.color8D9094),
         ]
             .toColumn(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.spaceBetween)
             .paddingAll(20.w)
@@ -338,7 +320,7 @@ class HomePage extends GetView<HomeController> {
               border: Border.all(width: 1, color: AppTheme.borderLine),
               borderRadius: BorderRadius.circular(15.w),
             )
-            .onTap(() => controller.goCoinPage()),
+            .onTap(() => Get.toNamed(AppRoutes.share)),
       ].toColumn(),
     ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween);
   }
@@ -600,21 +582,17 @@ class HomePage extends GetView<HomeController> {
   Widget _buildView() {
     return <Widget>[
       SizedBox(
-        height: 30.w,
-      ),
-      _buildBanner().paddingHorizontal(30.w),
-      SizedBox(
-        height: 30.w,
-      ),
-      _buildNotice().paddingHorizontal(30.w),
-      SizedBox(
-        height: 60.w,
+        height: 40.w,
       ),
       _buildAssets().paddingHorizontal(30.w),
       SizedBox(
         height: 60.w,
       ),
       _buildPromote().paddingHorizontal(30.w),
+      SizedBox(
+        height: 40.w,
+      ),
+      _buildNotice().paddingHorizontal(30.w),
       SizedBox(
         height: 40.w,
       ),

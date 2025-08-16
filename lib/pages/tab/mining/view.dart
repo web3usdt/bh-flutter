@@ -96,28 +96,28 @@ class MiningPage extends GetView<MiningController> {
             .clipRRect(all: 16.w),
 
       // 总收益
-      <Widget>[
-        <Widget>[
-          ImgWidget(
-            path: 'assets/images/mining22.png',
-            width: 28.w,
-            height: 28.w,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body(
-            '总收益'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.totalIncome ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining22.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '总收益'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.totalIncome ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的算力值
       <Widget>[
@@ -144,28 +144,28 @@ class MiningPage extends GetView<MiningController> {
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的佣金
-      <Widget>[
-        <Widget>[
-          ImgWidget(
-            path: 'assets/images/mining24.png',
-            width: 28.w,
-            height: 28.w,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body(
-            '我的佣金(BB)'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.commisson ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '我的佣金(BB)'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.commisson ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 昨日佣金收益
       <Widget>[
