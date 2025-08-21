@@ -11,6 +11,8 @@ import 'package:BBIExchange/pages/tab/main/index.dart';
 
 class HomeController extends GetxController {
   HomeController();
+  // 节点名称
+  String nodeName = '';
   // 申购列表
   List<HomeSubscribeListModel> subscribeList = [];
   // 当前选中的申购信息
@@ -78,6 +80,7 @@ class HomeController extends GetxController {
 
   // 初始化数据
   void _initData() async {
+    nodeName = Storage().getString('nodeName');
     isShowTotalAssetsBtc = Storage().getBool('isShowTotalAssetsBtc');
     update(["home"]);
     currentVersion = ConfigService.to.version;
@@ -444,5 +447,12 @@ class HomeController extends GetxController {
       },
       onCancel: () {},
     );
+  }
+
+  // 跳转到节点页
+  void goNodePage() async {
+    await Get.toNamed(AppRoutes.node);
+    nodeName = Storage().getString('nodeName');
+    update(["home"]);
   }
 }

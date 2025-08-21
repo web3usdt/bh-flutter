@@ -1,3 +1,4 @@
+import 'package:BBIExchange/pages/mine/node/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:BBIExchange/pages/assets/withdraw_setup/index.dart';
@@ -66,6 +67,9 @@ import 'observers.dart';
 
 class AppRoutes {
   // 登录流程
+  // 节点
+  static const node = '/nodePage';
+
   /// 启动页
   static const start = '/startPage';
 
@@ -226,6 +230,7 @@ class RoutePages {
 
   static final List<GetPage> list = [
     // 登录流程
+    GetPage(name: AppRoutes.node, page: () => const NodePage()),
     GetPage(name: AppRoutes.start, page: () => const StartPage()),
     GetPage(name: AppRoutes.login, page: () => const LoginPage()),
     GetPage(name: AppRoutes.register, page: () => const RegisterPage()),

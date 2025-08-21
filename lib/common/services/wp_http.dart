@@ -13,12 +13,9 @@ class WPHttpService extends GetxService {
   @override
   void onInit() {
     super.onInit();
-
-    // final baseUrl = ConfigService.to.curEnv.value.apiBaseUrl;
-    // log.d('baseUrl: $baseUrl');
     // 初始 dio
     final options = BaseOptions(
-      baseUrl: ConfigService.to.curEnv.value.apiBaseUrl,
+      baseUrl: Storage().getString('nodeApi'),
       connectTimeout: const Duration(seconds: 20), // 连接服务器超时时间
       receiveTimeout: const Duration(seconds: 15), // 接收数据的超时时间
       headers: {},

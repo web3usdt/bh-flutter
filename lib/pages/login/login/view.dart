@@ -225,16 +225,16 @@ class LoginPage extends GetView<LoginController> {
                   iconWidget: <Widget>[
                     <Widget>[
                       TextWidget(
-                        text: '当前节点'.tr + ': ',
+                        text: '${'当前节点'.tr}: ',
                         size: 24.sp,
                         color: AppTheme.color8B8B8B,
                       ),
-                      Obx(() => TextWidget(
-                            text: ConfigService.to.curEnv.value.name,
-                            size: 24.sp,
-                            color: AppTheme.colorYellow,
-                          ))
-                    ].toRow().onTap(() => Get.find<DevelopModeController>().switchEnv()),
+                      TextWidget(
+                        text: Storage().getString('nodeName'),
+                        size: 24.sp,
+                        color: AppTheme.primary,
+                      )
+                    ].toRow().onTap(() => Get.toNamed(AppRoutes.node)),
                     // SizedBox(width: 10.w),
                     // TextWidget.body(
                     //   ConfigService.to.locale.toLanguageTag() == 'zh-CN'

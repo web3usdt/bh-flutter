@@ -268,16 +268,19 @@ class UserinfoPage extends GetView<UserinfoController> {
         ].toColumn(crossAxisAlignment: CrossAxisAlignment.center).width(170.w).onTap(() {
           Get.toNamed(AppRoutes.setup);
         }),
-        switch (ConfigService.buildMode) {
-          BuildMode.dev => <Widget>[
-              TextWidget.body('开发模式'.tr, size: 30.sp, color: AppTheme.color000, textAlign: TextAlign.center),
-              SizedBox(height: 20.w),
-              TextWidget.body(ConfigService.to.curEnv.value.name)
-            ].toColumn(crossAxisAlignment: CrossAxisAlignment.center).width(170.w).clipRRect(all: 10.w).onTap(() {
-              Get.toNamed(AppRoutes.developMode);
-            }),
-          BuildMode.prod || BuildMode.test => <Widget>[].toColumn().width(170.w),
-        },
+        <Widget>[
+          // ImgWidget(
+          //   path: 'assets/images/mine8.png',
+          //   width: 48.w,
+          //   height: 48.w,
+          // ),
+          // SizedBox(
+          //   height: 20.w,
+          // ),
+          // TextWidget.body('切换节点'.tr, size: 24.sp, color: AppTheme.color000, textAlign: TextAlign.center),
+        ].toColumn(crossAxisAlignment: CrossAxisAlignment.center).width(170.w).clipRRect(all: 10.w).onTap(() {
+          // Get.toNamed(AppRoutes.node);
+        }),
         SizedBox(width: 170.w)
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(top: 40.w),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start);

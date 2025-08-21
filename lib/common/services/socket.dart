@@ -75,12 +75,14 @@ class SocketService extends GetxService {
 
   /// 初始化WebSocket
   Future<void> init() async {
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl1;
+    _wsUrl = Storage().getString('nodeSocketUrl1');
+    print('SocketService: $_wsUrl');
   }
 
   /// 连接到WebSocket服务器
   Future<void> connect() async {
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl1;
+    _wsUrl = Storage().getString('nodeSocketUrl1');
+    print('SocketService: $_wsUrl');
     final token = Storage().getString('token');
     if (token.isEmpty) {
       // log.w('未登录，不连接WebSocket');
@@ -93,6 +95,7 @@ class SocketService extends GetxService {
 
     try {
       final wsUrl = Uri.parse(_wsUrl);
+      print('SocketService: $_wsUrl');
       // log.i('正在连接WebSocket: $wsUrl');
 
       _channel = WebSocketChannel.connect(wsUrl);
@@ -261,7 +264,10 @@ class SocketService extends GetxService {
 
     if (_channel != null) {
       try {
-        await _channel!.sink.close(code ?? status.normalClosure, reason);
+        await _channel!.sink.close(code ?? status.normalClosure, reason).timeout(const Duration(seconds: 3), onTimeout: () {
+          // 关闭超时则忽略，继续清理
+          return;
+        });
       } catch (e) {
         // log.e('关闭连接时出错', error: e);
       } finally {
@@ -357,12 +363,14 @@ class SocketService2 extends GetxService {
   /// 初始化WebSocket
   Future<void> init() async {
     await SharedPreferences.getInstance();
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl2;
+    _wsUrl = Storage().getString('nodeSocketUrl2');
+    print('SocketService2: $_wsUrl');
   }
 
   /// 连接到WebSocket服务器
   Future<void> connect() async {
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl2;
+    _wsUrl = Storage().getString('nodeSocketUrl2');
+    print('SocketService2: $_wsUrl');
     final token = Storage().getString('token');
     if (token.isEmpty) {
       // log.w('未登录，不连接WebSocket2');
@@ -375,6 +383,7 @@ class SocketService2 extends GetxService {
 
     try {
       final wsUrl = Uri.parse(_wsUrl);
+      print('SocketService2: $_wsUrl');
       // log.i('正在连接WebSocket2: $wsUrl');
 
       _channel = WebSocketChannel.connect(wsUrl);
@@ -543,7 +552,9 @@ class SocketService2 extends GetxService {
 
     if (_channel != null) {
       try {
-        await _channel!.sink.close(code ?? status.normalClosure, reason);
+        await _channel!.sink.close(code ?? status.normalClosure, reason).timeout(const Duration(seconds: 3), onTimeout: () {
+          return;
+        });
       } catch (e) {
         // log.e('关闭连接时出错', error: e);
       } finally {
@@ -628,12 +639,13 @@ class SocketService3 extends GetxService {
   /// 初始化WebSocket
   Future<void> init() async {
     await SharedPreferences.getInstance();
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl3;
+    _wsUrl = Storage().getString('nodeSocketUrl3');
+    print('SocketService3: $_wsUrl');
   }
 
   /// 连接到WebSocket服务器
   Future<void> connect() async {
-    _wsUrl = ConfigService.to.curEnv.value.socketUrl3;
+    _wsUrl = Storage().getString('nodeSocketUrl3');
     final token = Storage().getString('token');
     if (token.isEmpty) {
       // log.w('未登录，不连接WebSocket2');
@@ -815,7 +827,9 @@ class SocketService3 extends GetxService {
 
     if (_channel != null) {
       try {
-        await _channel!.sink.close(code ?? status.normalClosure, reason);
+        await _channel!.sink.close(code ?? status.normalClosure, reason).timeout(const Duration(seconds: 3), onTimeout: () {
+          return;
+        });
       } catch (e) {
         // log.e('关闭连接时出错', error: e);
       } finally {

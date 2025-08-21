@@ -15,19 +15,24 @@ class StartController extends GetxController {
 
     // 第一次打开app，标记已打开
     ConfigService().setAlreadyOpen();
-
-    var token = Storage().getString('token');
-    if (PlatformUtils().isWeb) {
-      if (token.isNotEmpty) {
-        Get.offAllNamed(AppRoutes.home);
-      } else {
-        Get.offAllNamed(AppRoutes.login);
-      }
+    // 如果没有nodeApi，则跳转到节点页
+    var nodeApi = Storage().getString('nodeApi');
+    if (nodeApi.isEmpty) {
+      Get.offAllNamed(AppRoutes.node);
     } else {
-      if (token.isNotEmpty) {
-        Get.offAllNamed(AppRoutes.home);
+      var token = Storage().getString('token');
+      if (PlatformUtils().isWeb) {
+        if (token.isNotEmpty) {
+          Get.offAllNamed(AppRoutes.home);
+        } else {
+          Get.offAllNamed(AppRoutes.login);
+        }
       } else {
-        Get.offAllNamed(AppRoutes.login);
+        if (token.isNotEmpty) {
+          Get.offAllNamed(AppRoutes.home);
+        } else {
+          Get.offAllNamed(AppRoutes.login);
+        }
       }
     }
 

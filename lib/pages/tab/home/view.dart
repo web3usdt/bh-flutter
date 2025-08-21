@@ -15,7 +15,7 @@ class HomePage extends GetView<HomeController> {
   Widget _buildBanner() {
     return <Widget>[
       SizedBox(
-        width:350.w,
+        width: 350.w,
         height: 480.w,
         child: CarouselSlider(
           items: controller.bannerList.map((banner) {
@@ -623,7 +623,7 @@ class HomePage extends GetView<HomeController> {
                 width: 48.w,
                 height: 48.w,
                 radius: 24.w,
-              ),
+              ).onTap(() => Get.toNamed(AppRoutes.userinfo)),
               // TextWidget.body(
               //   controller.userInfo.getAccountDisplay(),
               //   size: 28.sp,
@@ -635,10 +635,16 @@ class HomePage extends GetView<HomeController> {
                     width: 10.w,
                   ),
                   TextWidget.body(
-                    ConfigService.to.curEnv.value.name,
+                    controller.nodeName,
                     size: 24.sp,
                   ),
-                ].toRow().paddingHorizontal(20.w).tight(height: 48.w).backgroundColor(AppTheme.blockBgColor).clipRRect(all: 30.w),
+                ]
+                    .toRow()
+                    .paddingHorizontal(20.w)
+                    .tight(height: 48.w)
+                    .backgroundColor(AppTheme.blockBgColor)
+                    .clipRRect(all: 30.w)
+                    .onTap(() => controller.goNodePage()),
                 SizedBox(
                   width: 20.w,
                 ),
@@ -647,8 +653,8 @@ class HomePage extends GetView<HomeController> {
                   width: 36.w,
                   height: 36.w,
                 ),
-              ].toRow()
-            ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).onTap(() => Get.toNamed(AppRoutes.userinfo)),
+              ].toRow().onTap(() => Get.toNamed(AppRoutes.userinfo))
+            ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween),
             backgroundColor: AppTheme.navBgColor,
             screenAdaptation: true,
             useDefaultBack: false,
