@@ -15,6 +15,16 @@ class SubscribeController extends GetxController {
   int currentNum = 0;
   // 当前周期
   int current = 0;
+  // 滑块进度
+  int progress = 100;
+  // 滑动触发
+  void onSliderChange(double value) {
+    progress = value.round();
+    // 同步更新输入框的值
+    numberController.text = progress.toString();
+    update(['subscribe']);
+  }
+
   List<Map<String, dynamic>> timeList = [
     {
       'index': 1,
@@ -61,6 +71,7 @@ class SubscribeController extends GetxController {
     onTimeChange(selectedSubscribe!);
     // 币种列表
     coinList.addAll(subscribeList.map((e) => HomeSubscribeCoinlistModel(coinName: e.coinName)).toList());
+    selectedCoin = subscribeList.first.coinName ?? '';
     update(["subscribe"]);
   }
 
@@ -130,16 +141,34 @@ class SubscribeController extends GetxController {
 
   // 全部
   void onAll() {
-    numberController.text = subscribeInfo.totalSubscribeNum.toString();
-    total = double.parse(MathUtils.multiple(subscribeInfo.totalSubscribeNum, proportionAmount, 2));
+    // 设置最大申购数量（3000）
+    progress = 3000;
+    numberController.text = progress.toString();
+    total = double.parse(MathUtils.multiple(progress.toString(), proportionAmount, 2));
     update(["subscribe"]);
   }
 
   // 输入监听，自动计算total
   void onNumberChanged(String value) {
     double num = double.tryParse(value) ?? 0;
+    // 限制输入范围在100-3000之间
+    if (num < 100) {
+      num = 100;
+      numberController.text = '100';
+    } else if (num > 3000) {
+      num = 3000;
+      numberController.text = '3000';
+    }
+    // 同步更新滑块进度
+    progress = num.round();
     total = double.parse(MathUtils.multiple(num, proportionAmount, 2));
     update(["subscribe"]);
+  }
+
+  // 失去焦点时触发
+  void onInputBlur() {
+    String value = numberController.text;
+    onNumberChanged(value);
   }
 
   // 查看介绍

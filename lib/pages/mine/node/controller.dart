@@ -38,18 +38,6 @@ class NodeController extends GetxController {
       'isSelected': false,
     },
     {
-      'name': '节点3',
-      'imgUrl': 'https://happyxfb.net/speedtest.png',
-      'api': 'https://happyxfb.net',
-      'socketUrl1': 'wss://happyxfb.net/ws1',
-      'socketUrl2': 'wss://happyxfb.net/ws2',
-      'socketUrl3': 'wss://happyxfb.net/ws3',
-      'speed': '9999',
-      'isTesting': false,
-      'testResult': null,
-      'isSelected': false,
-    },
-    {
       'name': '测试节点',
       'imgUrl': 'https://happyxfb.vip/speedtest.png',
       'api': 'https://happyxfb.vip',

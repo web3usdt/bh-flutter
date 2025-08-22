@@ -154,11 +154,12 @@ class SubscribePage extends GetView<SubscribeController> {
           .onTap(() {
         controller.showCoinPicker();
       }),
-      TextWidget.body(
-        '${'支付比例：'.tr}${controller.selectedSubscribe?.hashRate ?? 0}% ${'算力'.tr} + ${100 - (controller.selectedSubscribe?.hashRate ?? 0)}% USDT',
-        size: 24.sp,
-        color: AppTheme.color999,
-      ).marginOnly(bottom: 20.w),
+      if (controller.selectedSubscribe?.coinName != 'BB')
+        TextWidget.body(
+          '${'支付比例：'.tr}${controller.selectedSubscribe?.hashRate ?? 0}% ${'算力'.tr} + ${100 - (controller.selectedSubscribe?.hashRate ?? 0)}% USDT',
+          size: 24.sp,
+          color: AppTheme.color999,
+        ).marginOnly(bottom: 20.w),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start);
   }
 
@@ -171,46 +172,66 @@ class SubscribePage extends GetView<SubscribeController> {
           size: 28.sp,
           color: AppTheme.color000,
         ),
+        TextWidget.body(
+          '（100-3000${controller.selectedSubscribe?.coinName ?? ''}）',
+          size: 28.sp,
+          color: AppTheme.color000,
+        ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 20.w),
+      // 滑块选择：范围100-3000
+      Slider(
+        value: controller.progress.toDouble(),
+        min: 100,
+        max: 3000,
+        divisions: 290, // 3000-100=2900，每10一个刻度
+        label: '${controller.progress}${controller.selectedSubscribe?.coinName ?? ''}',
+        activeColor: AppTheme.colorGreen,
+        inactiveColor: AppTheme.color999,
+        onChanged: (double value) {
+          controller.onSliderChange(value);
+        },
+      ),
 
-      if (controller.selectedSubscribe?.package != null)
-        <Widget>[
-          for (var item in controller.selectedSubscribe?.package ?? [])
-            ButtonWidget(
-              text: '$item',
-              height: 66,
-              borderRadius: 6,
-              backgroundColor: controller.currentNum == item ? AppTheme.primary : Colors.transparent,
-              textColor: controller.currentNum == item ? Colors.white : AppTheme.color999,
-              padding: EdgeInsets.only(left: 30.w, right: 30.w),
-              showBorder: true,
-              borderColor: controller.currentNum == item ? AppTheme.primary : AppTheme.color999,
-              onTap: () {
-                controller.onNumChange(item);
-              },
-            ).marginOnly(right: 30.w),
-        ].toRow()
-      else
-        <Widget>[
-          InputWidget(
-            placeholder: "请输入申购数量".tr,
-            controller: controller.numberController,
-            onChanged: controller.onNumberChanged,
-          ).expanded(),
-          TextWidget.body(
-            '全部'.tr,
-            size: 26.sp,
-            color: AppTheme.color000,
-          ).onTap(controller.onAll),
-        ]
-            .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
-            .paddingHorizontal(30.w)
-            .height(88.w)
-            .decorated(
-              borderRadius: BorderRadius.circular(10.w),
-              border: Border.all(color: AppTheme.borderLine, width: 1),
-            )
-            .marginOnly(bottom: 20.w),
+      // if (controller.selectedSubscribe?.package != null && controller.selectedSubscribe?.coinName != 'BB')
+      //   <Widget>[
+      //     for (var item in controller.selectedSubscribe?.package ?? [])
+      //       ButtonWidget(
+      //         text: '$item',
+      //         height: 66,
+      //         borderRadius: 6,
+      //         backgroundColor: controller.currentNum == item ? AppTheme.primary : Colors.transparent,
+      //         textColor: controller.currentNum == item ? Colors.white : AppTheme.color999,
+      //         padding: EdgeInsets.only(left: 30.w, right: 30.w),
+      //         showBorder: true,
+      //         borderColor: controller.currentNum == item ? AppTheme.primary : AppTheme.color999,
+      //         onTap: () {
+      //           controller.onNumChange(item);
+      //         },
+      //       ).marginOnly(right: 30.w),
+      //   ].toRow()
+      // else
+      <Widget>[
+        InputWidget(
+          placeholder: "请输入申购数量".tr,
+          controller: controller.numberController,
+          onBlur: controller.onInputBlur,
+          readOnly: false,
+          keyboardType: TextInputType.number,
+        ).expanded(),
+        TextWidget.body(
+          '全部'.tr,
+          size: 26.sp,
+          color: AppTheme.color000,
+        ).onTap(controller.onAll),
+      ]
+          .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
+          .paddingHorizontal(30.w)
+          .height(88.w)
+          .decorated(
+            borderRadius: BorderRadius.circular(10.w),
+            border: Border.all(color: AppTheme.borderLine, width: 1),
+          )
+          .marginOnly(bottom: 20.w),
       // <Widget>[
       //   TextWidget.body('可申购数量：',size: 24.sp,color: AppTheme.color999,),
       //   TextWidget.body('1000000USDT',size: 24.sp,color: AppTheme.color000,),
