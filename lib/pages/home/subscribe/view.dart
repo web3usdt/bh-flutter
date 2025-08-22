@@ -168,12 +168,12 @@ class SubscribePage extends GetView<SubscribeController> {
     return <Widget>[
       <Widget>[
         TextWidget.body(
-          '申购数量'.tr,
+          '申购金额'.tr,
           size: 28.sp,
           color: AppTheme.color000,
         ),
         TextWidget.body(
-          '（100-3000${controller.selectedSubscribe?.coinName ?? ''}）',
+          '（${controller.selectedSubscribe?.minimumPurchase ?? 0}-${controller.selectedSubscribe?.maximumPurchase ?? 0}USDT）',
           size: 28.sp,
           color: AppTheme.color000,
         ),
@@ -184,7 +184,7 @@ class SubscribePage extends GetView<SubscribeController> {
         min: 100,
         max: 3000,
         divisions: 290, // 3000-100=2900，每10一个刻度
-        label: '${controller.progress}${controller.selectedSubscribe?.coinName ?? ''}',
+        label: '${controller.progress}USDT',
         activeColor: AppTheme.colorGreen,
         inactiveColor: AppTheme.color999,
         onChanged: (double value) {
@@ -215,6 +215,7 @@ class SubscribePage extends GetView<SubscribeController> {
           placeholder: "请输入申购数量".tr,
           controller: controller.numberController,
           onBlur: controller.onInputBlur,
+          onChanged: controller.onNumberChanged,
           readOnly: false,
           keyboardType: TextInputType.number,
         ).expanded(),
@@ -232,10 +233,22 @@ class SubscribePage extends GetView<SubscribeController> {
             border: Border.all(color: AppTheme.borderLine, width: 1),
           )
           .marginOnly(bottom: 20.w),
-      // <Widget>[
-      //   TextWidget.body('可申购数量：',size: 24.sp,color: AppTheme.color999,),
-      //   TextWidget.body('1000000USDT',size: 24.sp,color: AppTheme.color000,),
-      // ].toRow()
+      <Widget>[
+        TextWidget.body(
+          '=',
+          size: 24.sp,
+          color: AppTheme.color999,
+        ),
+        SizedBox(
+          width: 5.w,
+        ),
+        TextWidget.body(
+          // 输入框中的值 需要* 1000
+          '${((double.tryParse(controller.numberController.text) ?? 0) * 1000)}${controller.selectedSubscribe?.coinName ?? ''}',
+          size: 24.sp,
+          color: AppTheme.color000,
+        ),
+      ].toRow()
     ].toColumn();
   }
 
