@@ -38,7 +38,7 @@ Map<String, String> localeEn = {
 
   // Login module related
   '登录': 'Login',
-  'Hello!欢迎来到BBI Exchange': 'Hello! Welcome to BBI Exchange',
+  'Hello!欢迎来到BBICEX': 'Hello! Welcome to BBICEX',
   '账号': 'Account',
   '请输入账号': 'Please enter account',
   '登陆密码': 'Login Password',

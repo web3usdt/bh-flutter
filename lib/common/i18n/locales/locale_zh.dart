@@ -38,7 +38,7 @@ Map<String, String> localeZh = {
 
   // 登录模块相关
   '登录': '登录',
-  'Hello!欢迎来到BBI Exchange': 'Hello!欢迎来到BBI Exchange',
+  'Hello!欢迎来到BBICEX': 'Hello!欢迎来到BBICEX',
   '账号': '账号',
   '请输入账号': '请输入账号',
   '登陆密码': '登陆密码',

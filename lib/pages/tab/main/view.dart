@@ -89,19 +89,19 @@ class _MainViewGetX extends GetView<MainController> {
                     height: 36.w,
                   ),
                 ),
-                NavigationItemModel(
-                  label: '期权'.tr,
-                  icon: Image(
-                    image: AssetImage(Get.isDarkMode ? 'assets/img/navbar3.png' : 'assets/img/navbar3.png'),
-                    width: 36.w,
-                    height: 36.w,
-                  ),
-                  activeIcon: Image(
-                    image: const AssetImage('assets/img/navbar3ac.png'),
-                    width: 36.w,
-                    height: 36.w,
-                  ),
-                ),
+                // NavigationItemModel(
+                //   label: '期权'.tr,
+                //   icon: Image(
+                //     image: AssetImage(Get.isDarkMode ? 'assets/img/navbar3.png' : 'assets/img/navbar3.png'),
+                //     width: 36.w,
+                //     height: 36.w,
+                //   ),
+                //   activeIcon: Image(
+                //     image: const AssetImage('assets/img/navbar3ac.png'),
+                //     width: 36.w,
+                //     height: 36.w,
+                //   ),
+                // ),
                 NavigationItemModel(
                   label: '挖矿'.tr,
                   icon: Image(
@@ -115,19 +115,19 @@ class _MainViewGetX extends GetView<MainController> {
                     height: 36.w,
                   ),
                 ),
-                NavigationItemModel(
-                  label: '永续'.tr,
-                  icon: Image(
-                    image: AssetImage(Get.isDarkMode ? 'assets/img/navbar5.png' : 'assets/img/navbar5.png'),
-                    width: 36.w,
-                    height: 36.w,
-                  ),
-                  activeIcon: Image(
-                    image: const AssetImage('assets/img/navbar5ac.png'),
-                    width: 36.w,
-                    height: 36.w,
-                  ),
-                ),
+                // NavigationItemModel(
+                //   label: '永续'.tr,
+                //   icon: Image(
+                //     image: AssetImage(Get.isDarkMode ? 'assets/img/navbar5.png' : 'assets/img/navbar5.png'),
+                //     width: 36.w,
+                //     height: 36.w,
+                //   ),
+                //   activeIcon: Image(
+                //     image: const AssetImage('assets/img/navbar5ac.png'),
+                //     width: 36.w,
+                //     height: 36.w,
+                //   ),
+                // ),
                 NavigationItemModel(
                   label: '资产'.tr,
                   icon: Image(
@@ -155,9 +155,9 @@ class _MainViewGetX extends GetView<MainController> {
             // 加入空页面占位
             HomePage(),
             CoinPage(),
-            OptionPage(),
+            // OptionPage(),
             MiningPage(),
-            ContinuousPage(),
+            // ContinuousPage(),
             AssetsPage(),
           ],
         ),

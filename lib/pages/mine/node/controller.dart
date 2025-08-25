@@ -8,7 +8,7 @@ class NodeController extends GetxController {
   // token
   String? token;
   // 是否显示测试节点
-  bool isShowTestNode = false;
+  bool isShowTestNode = true;
   int isShowTestNodeCount = 0;
 
   // 节点列表

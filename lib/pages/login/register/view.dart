@@ -20,7 +20,7 @@ class RegisterPage extends GetView<RegisterController> {
       ),
       SizedBox(height: 20.w),
       TextWidget.body(
-        'Hello!欢迎来到BBI Exchange'.tr,
+        'Hello!欢迎来到BBICEX'.tr,
         size: 28.sp,
         color: AppTheme.color000,
       ),

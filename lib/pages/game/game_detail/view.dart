@@ -200,7 +200,7 @@ class GameDetailPage extends GetView<GameDetailController> {
                             ImgWidget(path: 'assets/icons/ic_logo.png', width: 72.w, height: 72.w),
                             SizedBox(width: 20.w),
                             <Widget>[
-                              TextWidget.body('BBI Exchange', size: 30.sp, color: AppTheme.color000, weight: FontWeight.w600),
+                              TextWidget.body('BBICEX', size: 30.sp, color: AppTheme.color000, weight: FontWeight.w600),
                               SizedBox(height: 10.w),
                               TextWidget.body('数字资产交易平台'.tr, size: 20.sp, color: AppTheme.color000),
                             ].toColumn(crossAxisAlignment: CrossAxisAlignment.start)

@@ -82,6 +82,7 @@ class HomeController extends GetxController {
   void _initData() async {
     nodeName = Storage().getString('nodeName');
     isShowTotalAssetsBtc = Storage().getBool('isShowTotalAssetsBtc');
+    print('币种显示隐藏: $isShowTotalAssetsBtc');
     update(["home"]);
     currentVersion = ConfigService.to.version;
     onVersionUpdate();
@@ -175,7 +176,7 @@ class HomeController extends GetxController {
     for (var parentItem in marketList) {
       if (parentItem.coinName == 'USDT') {
         final list = parentItem.marketInfoList ?? [];
-        result.addAll(list.where((item) => item.pairName == 'BB/USDT' || item.pairName == 'ETH/USDT' || item.pairName == 'XAUT/USDT'));
+        result.addAll(list.where((item) => item.pairName == 'BB/USDT' || item.pairName == 'ETH/USDT' || item.pairName == 'BTC/USDT'));
       }
     }
     return result;

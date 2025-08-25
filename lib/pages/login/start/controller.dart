@@ -11,6 +11,7 @@ class StartController extends GetxController {
     // 是否首次打开app
     if (!ConfigService.to.isAlreadyOpen) {
       // 首次打开app
+      Storage().setBool('isShowTotalAssetsBtc', true);
     }
 
     // 第一次打开app，标记已打开

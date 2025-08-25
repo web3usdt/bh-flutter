@@ -38,12 +38,12 @@ class ConfigService extends GetxService {
   String get appName {
     switch (buildMode) {
       case BuildMode.dev:
-        return 'Happy-Dev';
+        return 'BBICEX';
       case BuildMode.test:
-        return 'Happy-Test';
+        return 'BBICEX';
       case BuildMode.prod:
       default:
-        return 'Happy';
+        return 'BBICEX';
     }
   }
 

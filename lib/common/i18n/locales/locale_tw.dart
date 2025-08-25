@@ -38,7 +38,7 @@ Map<String, String> localeTw = {
 
   // 登录模块相关
   '登录': '登入',
-  'Hello!欢迎来到BBI Exchange': 'Hello!歡迎來到BBI Exchange',
+  'Hello!欢迎来到BBICEX': 'Hello!歡迎來到BBICEX',
   '账号': '帳號',
   '请输入账号': '請輸入帳號',
   '登陆密码': '登入密碼',

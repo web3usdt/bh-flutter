@@ -36,7 +36,7 @@ class LoginPage extends GetView<LoginController> {
       ).onTap(() => Get.find<DevelopModeController>().switchTestEnv()),
       SizedBox(height: 20.w),
       TextWidget.body(
-        'Hello!欢迎来到BBI Exchange'.tr,
+        'Hello!欢迎来到BBICEX'.tr,
         size: 28.sp,
         color: AppTheme.color000,
       ),
