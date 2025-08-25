@@ -120,20 +120,20 @@ class MiningPage extends GetView<MiningController> {
       // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的算力值
-      <Widget>[
-        <Widget>[
-          TextWidget.body(
-            '我的算力值'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.myPower ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+      // <Widget>[
+      //   <Widget>[
+      //     TextWidget.body(
+      //       '我的算力值'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.myPower ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的佣金
       // <Widget>[
@@ -185,7 +185,7 @@ class MiningPage extends GetView<MiningController> {
           ),
         ].toRow(),
         TextWidget.body(
-          '${controller.performance?.teamIncomePowerU ?? 0}',
+          '${controller.performance?.destroyPowerU ?? 0}',
           size: 20.sp,
           color: AppTheme.color000,
         ),

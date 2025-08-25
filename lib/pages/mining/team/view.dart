@@ -63,38 +63,38 @@ class TeamPage extends GetView<TeamController> {
         ].toRow(),
         TextWidget.body('${controller.miningTeamStat.inviteIndirectNum ?? 0} ${'人'.tr}', size: 20.sp, color: AppTheme.color000),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).marginOnly(bottom: 30.w),
-      <Widget>[
-        <Widget>[
-          ImgWidget(path: 'assets/images/team4.png', width: 28.w, height: 28.w),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body('日销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
-        ].toRow(),
-        <Widget>[
-          TextWidget.body('${controller.miningTeamInfo.destroyDayBb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
-          SizedBox(
-            height: 10.w,
-          ),
-          TextWidget.body('${controller.miningTeamInfo.destroyDayU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
-        ].toColumn()
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 20.w),
-      <Widget>[
-        <Widget>[
-          ImgWidget(path: 'assets/images/team5.png', width: 28.w, height: 28.w),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body('月销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
-        ].toRow(),
-        <Widget>[
-          TextWidget.body('${controller.miningTeamInfo.destroyMonthBb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
-          SizedBox(
-            height: 10.w,
-          ),
-          TextWidget.body('${controller.miningTeamInfo.destroyMonthU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
-        ].toColumn()
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(path: 'assets/images/team4.png', width: 28.w, height: 28.w),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body('日销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
+      //   ].toRow(),
+      //   <Widget>[
+      //     TextWidget.body('${controller.miningTeamInfo.destroyDayBb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
+      //     SizedBox(
+      //       height: 10.w,
+      //     ),
+      //     TextWidget.body('${controller.miningTeamInfo.destroyDayU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
+      //   ].toColumn()
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start).marginOnly(bottom: 20.w),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(path: 'assets/images/team5.png', width: 28.w, height: 28.w),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body('月销毁'.tr, size: 20.sp, color: AppTheme.color8D9094),
+      //   ].toRow(),
+      //   <Widget>[
+      //     TextWidget.body('${controller.miningTeamInfo.destroyMonthBb ?? 0} BB', size: 20.sp, color: AppTheme.color000),
+      //     SizedBox(
+      //       height: 10.w,
+      //     ),
+      //     TextWidget.body('${controller.miningTeamInfo.destroyMonthU ?? 0} USDT', size: 20.sp, color: AppTheme.color8D9094),
+      //   ].toColumn()
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween, crossAxisAlignment: CrossAxisAlignment.start),
     ]
         .toColumn()
         .paddingAll(30.w)

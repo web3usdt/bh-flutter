@@ -215,7 +215,6 @@ class SubscribePage extends GetView<SubscribeController> {
           placeholder: "请输入申购数量".tr,
           controller: controller.numberController,
           onBlur: controller.onInputBlur,
-          onChanged: controller.onNumberChanged,
           readOnly: false,
           keyboardType: TextInputType.number,
         ).expanded(),
