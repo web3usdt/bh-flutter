@@ -154,12 +154,12 @@ class SubscribePage extends GetView<SubscribeController> {
           .onTap(() {
         controller.showCoinPicker();
       }),
-      if (controller.selectedSubscribe?.coinName != 'BB')
-        TextWidget.body(
-          '${'支付比例：'.tr}${controller.selectedSubscribe?.hashRate ?? 0}% ${'算力'.tr} + ${100 - (controller.selectedSubscribe?.hashRate ?? 0)}% USDT',
-          size: 24.sp,
-          color: AppTheme.color999,
-        ).marginOnly(bottom: 20.w),
+      // if (controller.selectedSubscribe?.coinName != 'BB')
+      //   TextWidget.body(
+      //     '${'支付比例：'.tr}${controller.selectedSubscribe?.hashRate ?? 0}% ${'算力'.tr} + ${100 - (controller.selectedSubscribe?.hashRate ?? 0)}% USDT',
+      //     size: 24.sp,
+      //     color: AppTheme.color999,
+      //   ).marginOnly(bottom: 20.w),
     ].toColumn(crossAxisAlignment: CrossAxisAlignment.start);
   }
 

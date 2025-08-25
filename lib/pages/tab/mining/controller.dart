@@ -22,6 +22,8 @@ class MiningController extends GetxController {
     {'title': '全网矿池'.tr, 'icon': 'assets/images/mining31.png', 'route': AppRoutes.network},
     {'title': '获取算力'.tr, 'icon': 'assets/images/mining32.png', 'route': AppRoutes.getPower},
   ];
+  // 挖矿数据
+  Performance? performance;
 
   @override
   void onReady() {
@@ -31,6 +33,8 @@ class MiningController extends GetxController {
 
   _initData() async {
     miningUserinfo = await MiningApi.getMiningUserinfo();
+    performance = miningUserinfo.performance;
+    print('performance: $performance');
     Storage().setJson('miningUserinfo', miningUserinfo);
     update(["mining"]);
   }

@@ -56,7 +56,7 @@ class SubscribeController extends GetxController {
     // {'id': 3, 'name': 'ETH'},
   ];
   // 申购信息
-  HomeSubscribeInfoModel subscribeInfo = HomeSubscribeInfoModel();
+  String? projectDetails = '';
   // 总价
   double total = 0;
   // 1U = *BB
@@ -68,6 +68,7 @@ class SubscribeController extends GetxController {
     // 当前选中的申购信息
     selectedSubscribe = subscribeList.first;
     current = selectedSubscribe?.status ?? 0;
+    projectDetails = selectedSubscribe?.projectDetails ?? '';
     onTimeChange(selectedSubscribe!);
     // 币种列表
     coinList.addAll(subscribeList.map((e) => HomeSubscribeCoinlistModel(coinName: e.coinName)).toList());
@@ -206,7 +207,7 @@ class SubscribeController extends GetxController {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextWidget.body(
-                        subscribeInfo.projectDetails ?? '',
+                        projectDetails ?? '',
                         size: 28.sp,
                         color: AppTheme.color000,
                       ),

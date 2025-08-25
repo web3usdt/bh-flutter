@@ -16,6 +16,7 @@ class MiningUserinfoModel {
   int? minerNoactiveCount;
   MiningUserinfoModelMiner? miner;
   String? lockPower;
+  Performance? performance;
 
   MiningUserinfoModel({
     this.commisson,
@@ -31,6 +32,7 @@ class MiningUserinfoModel {
     this.minerNoactiveCount,
     this.miner,
     this.lockPower,
+    this.performance,
   });
 
   factory MiningUserinfoModel.fromJson(Map<String, dynamic> json) {
@@ -48,6 +50,7 @@ class MiningUserinfoModel {
       minerNoactiveCount: DataUtils.toInt(json['miner_noactive_count']),
       miner: json['miner'] == null ? null : MiningUserinfoModelMiner.fromJson(json['miner'] as Map<String, dynamic>),
       lockPower: DataUtils.toStr(json['lock_power']),
+      performance: json['performance'] == null ? null : Performance.fromJson(json['performance'] as Map<String, dynamic>),
     );
   }
 
@@ -65,5 +68,6 @@ class MiningUserinfoModel {
         'miner_noactive_count': minerNoactiveCount,
         'miner': miner?.toJson(),
         'lock_power': lockPower,
+        'performance': performance?.toJson(),
       };
 }

@@ -83,6 +83,7 @@ export 'contract/contracr_setstrategy_req.dart';
 export 'mining/mining_userinfo_model/mining_userinfo_model.dart';
 export 'mining/mining_userinfo_model/miner.dart';
 export 'mining/mining_userinfo_model/miner_num.dart';
+export 'mining/mining_userinfo_model/performance.dart';
 export 'mining/mining_power_record_model.dart';
 export 'mining/mining_record_model/mining_record_model.dart';
 export 'mining/mining_record_model/related.dart';

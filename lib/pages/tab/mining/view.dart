@@ -120,28 +120,28 @@ class MiningPage extends GetView<MiningController> {
       // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的算力值
-      <Widget>[
-        <Widget>[
-          ImgWidget(
-            path: 'assets/images/mining23.png',
-            width: 28.w,
-            height: 28.w,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body(
-            '我的算力值'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.myPower ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining23.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '我的算力值'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.myPower ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 我的佣金
       // <Widget>[
@@ -190,6 +190,198 @@ class MiningPage extends GetView<MiningController> {
           color: AppTheme.color000,
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 个人业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '个人业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.teamIncomePowerU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 推广奖励
+      <Widget>[
+        <Widget>[
+          ImgWidget(
+            path: 'assets/images/mining24.png',
+            width: 28.w,
+            height: 28.w,
+          ),
+          SizedBox(
+            width: 20.w,
+          ),
+          TextWidget.body(
+            '推广奖励'.tr,
+            size: 20.sp,
+            color: AppTheme.color8D9094,
+          ),
+        ].toRow(),
+        TextWidget.body(
+          '${controller.performance?.teamRewardU ?? 0}',
+          size: 20.sp,
+          color: AppTheme.color000,
+        ),
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 累计收益
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '累计收益'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.teamIncomePowerU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 大区业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '大区业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.daquDestoryCoinU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 小区业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '小区业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.xiaoquDestoryCoinU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 团队日业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '团队日业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.teamDestroyDayU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 团队月业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '团队月业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.teamDestroyMonthU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+      // 团队总业绩
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining24.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '团队总业绩'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.performance?.teamDestroyAllU ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
     ].toColumn().paddingAll(30.w).tight(width: 690.w).decorated(
           border: Border.all(width: 1, color: AppTheme.borderLine),
           borderRadius: BorderRadius.circular(16.w),
