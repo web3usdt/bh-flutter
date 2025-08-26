@@ -80,4 +80,9 @@ class MiningController extends GetxController {
       },
     );
   }
+
+ // 弹出文案提示
+  showTextDialog() {
+    Loading.toast('销毁金额的3倍');
+  }
 }

@@ -179,10 +179,17 @@ class MiningPage extends GetView<MiningController> {
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '我的预期收益（销毁金额的3倍）'.tr,
+            '我的预期收益'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.destroyPowerU ?? 0}',
@@ -199,6 +206,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.totalIncomeU ?? 0}',
@@ -215,7 +229,15 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
+        
         TextWidget.body(
           '${controller.performance?.teamRewardU ?? 0}',
           size: 20.sp,
@@ -231,6 +253,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.teamIncomePowerU ?? 0}',
@@ -247,6 +276,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.daquDestoryCoinU ?? 0}',
@@ -263,6 +299,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.xiaoquDestoryCoinU ?? 0}',
@@ -279,6 +322,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.teamDestroyDayU ?? 0}',
@@ -295,6 +345,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.teamDestroyMonthU ?? 0}',
@@ -311,6 +368,13 @@ class MiningPage extends GetView<MiningController> {
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog();
+          })
         ].toRow(),
         TextWidget.body(
           '${controller.performance?.teamDestroyAllU ?? 0}',
