@@ -188,7 +188,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("销毁平台币赠送的3倍算力的USDT价值");
+            controller.showTextDialog("销毁平台币赠送的3倍算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -211,7 +211,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("已经产出平台币所消耗算力的U价值");
+            controller.showTextDialog("已经产出平台币所消耗算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -234,7 +234,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("推广奖励算力");
+            controller.showTextDialog("推广奖励的算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -281,7 +281,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("我自己的销毁的算力的USDT价值");
+            controller.showTextDialog("我自己的销毁的算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -305,7 +305,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("最大一条线的毁的算力的USDT价值");
+            controller.showTextDialog("最大一条线的毁的算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -328,7 +328,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("团队排出最大一条线其他线业绩总和");
+            controller.showTextDialog("团队中排除最大一条线其他线业绩总和");
           })
         ].toRow(),
         TextWidget.body(
