@@ -34,36 +34,36 @@ class MiningPage extends GetView<MiningController> {
       ),
 
       // 预计今日收益
-      <Widget>[
-        <Widget>[
-          ImgWidget(
-            path: 'assets/images/mining21.png',
-            width: 28.w,
-            height: 28.w,
-          ),
-          SizedBox(
-            width: 20.w,
-          ),
-          TextWidget.body(
-            '预计今日收益'.tr,
-            size: 20.sp,
-            color: AppTheme.color000,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.todayIncome ?? 0}',
-          size: 24.sp,
-          color: AppTheme.color000,
-        ),
-      ]
-          .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
-          .paddingHorizontal(30.w)
-          .tight(width: 630.w, height: 80.w)
-          .backgroundColor(AppTheme.blockTwoBgColor)
-          .clipRRect(all: 16.w),
-      SizedBox(
-        height: 20.w,
-      ),
+      // <Widget>[
+      //   <Widget>[
+      //     ImgWidget(
+      //       path: 'assets/images/mining21.png',
+      //       width: 28.w,
+      //       height: 28.w,
+      //     ),
+      //     SizedBox(
+      //       width: 20.w,
+      //     ),
+      //     TextWidget.body(
+      //       '预计今日收益'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color000,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.todayIncome ?? 0}',
+      //     size: 24.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ]
+      //     .toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween)
+      //     .paddingHorizontal(30.w)
+      //     .tight(width: 630.w, height: 80.w)
+      //     .backgroundColor(AppTheme.blockTwoBgColor)
+      //     .clipRRect(all: 16.w),
+      // SizedBox(
+      //   height: 20.w,
+      // ),
 
       // 释放收益
       if (controller.miningUserinfo.lockPower != null && controller.miningUserinfo.lockPower != '0' && controller.miningUserinfo.lockPower != '--')
@@ -179,7 +179,7 @@ class MiningPage extends GetView<MiningController> {
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '个人销毁算力(x3)'.tr,
+            '我的预期收益（销毁金额的3倍）'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
@@ -191,17 +191,17 @@ class MiningPage extends GetView<MiningController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
-      // 个人收益
+      // 我已获得收益
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '个人收益'.tr,
+            '我已获得收益（已经产出平台）'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
         ].toRow(),
         TextWidget.body(
-          '${controller.performance?.destoryIncomeU ?? 0}',
+          '${controller.performance?.totalIncomeU ?? 0}',
           size: 20.sp,
           color: AppTheme.color000,
         ),

@@ -18,7 +18,7 @@ class MiningController extends GetxController {
       'route': AppRoutes.miningRecord,
       'arguments': {'type': 'power'}
     },
-    // {'title': '团队数据'.tr, 'icon': 'assets/images/mining30.png', 'route': AppRoutes.team},
+    {'title': '团队数据'.tr, 'icon': 'assets/images/mining30.png', 'route': AppRoutes.team},
     {'title': '全网矿池'.tr, 'icon': 'assets/images/mining31.png', 'route': AppRoutes.network},
     {'title': '获取算力'.tr, 'icon': 'assets/images/mining32.png', 'route': AppRoutes.getPower},
   ];
