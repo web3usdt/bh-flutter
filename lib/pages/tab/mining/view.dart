@@ -188,7 +188,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(1);
+            controller.showTextDialog("销毁平台的3倍");
           })
         ].toRow(),
         TextWidget.body(
@@ -202,7 +202,7 @@ class MiningPage extends GetView<MiningController> {
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '我已获得收益（已经产出平台）'.tr,
+            '我已获得收益'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
@@ -211,7 +211,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(2);
+            controller.showTextDialog("已经产出平台");
           })
         ].toRow(),
         TextWidget.body(
@@ -234,7 +234,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(3);
+            controller.showTextDialog("推广奖励算力");
           })
         ].toRow(),
         TextWidget.body(
@@ -257,7 +257,8 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(4);
+           controller.showTextDialog("累计收益");
+
           })
         ].toRow(),
         TextWidget.body(
@@ -280,7 +281,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(5);
+            controller.showTextDialog("最大一条线的业绩");
           })
         ].toRow(),
         TextWidget.body(
@@ -303,7 +304,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(6);
+            controller.showTextDialog("团队排出最大一条线其他线业绩总和");
           })
         ].toRow(),
         TextWidget.body(
@@ -326,7 +327,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(7);
+            controller.showTextDialog("团队今日业绩");
           })
         ].toRow(),
         TextWidget.body(
@@ -349,7 +350,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(8);
+            controller.showTextDialog("团队本月业绩");
           })
         ].toRow(),
         TextWidget.body(
@@ -372,7 +373,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog(9);
+            controller.showTextDialog("团队总业绩");
           })
         ].toRow(),
         TextWidget.body(

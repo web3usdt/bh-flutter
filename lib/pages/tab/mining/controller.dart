@@ -82,7 +82,7 @@ class MiningController extends GetxController {
   }
 
   // 弹出文案提示
-  showTextDialog(int index) {
-    Loading.toast('$index');
+  showTextDialog(String text) {
+    Loading.toast(text);
   }
 }
