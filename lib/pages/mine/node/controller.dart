@@ -8,7 +8,7 @@ class NodeController extends GetxController {
   // token
   String? token;
   // 是否显示测试节点
-  bool isShowTestNode = true;
+  bool isShowTestNode = Constants.isShowTestNode;
   int isShowTestNodeCount = 0;
 
   // 节点列表（复制为可变 Map，避免修改 const 源导致的 UnsupportedError）
