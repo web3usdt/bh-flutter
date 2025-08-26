@@ -619,9 +619,9 @@ class HomePage extends GetView<HomeController> {
             titleWidget: <Widget>[
               ImgWidget(
                 // 左图
-                path: 'assets/icons/ic_logo.png',
-                width: 48.w,
-                height: 48.w,
+                path: 'assets/icons/icon.png',
+                width: 58.w,
+                height: 58.w,
                 radius: 24.w,
               ).onTap(() => Get.toNamed(AppRoutes.userinfo)),
               // TextWidget.body(

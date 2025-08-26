@@ -188,7 +188,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(1);
           })
         ].toRow(),
         TextWidget.body(
@@ -211,11 +211,11 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(2);
           })
         ].toRow(),
         TextWidget.body(
-          '${controller.performance?.totalIncomeU ?? 0}',
+          '${controller.performance?.totalIncome ?? 0}',
           size: 20.sp,
           color: AppTheme.color000,
         ),
@@ -234,10 +234,9 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(3);
           })
         ].toRow(),
-        
         TextWidget.body(
           '${controller.performance?.teamRewardU ?? 0}',
           size: 20.sp,
@@ -258,7 +257,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(4);
           })
         ].toRow(),
         TextWidget.body(
@@ -281,7 +280,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(5);
           })
         ].toRow(),
         TextWidget.body(
@@ -304,7 +303,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(6);
           })
         ].toRow(),
         TextWidget.body(
@@ -327,7 +326,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(7);
           })
         ].toRow(),
         TextWidget.body(
@@ -350,7 +349,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(8);
           })
         ].toRow(),
         TextWidget.body(
@@ -373,7 +372,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog();
+            controller.showTextDialog(9);
           })
         ].toRow(),
         TextWidget.body(

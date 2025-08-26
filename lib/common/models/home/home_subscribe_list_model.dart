@@ -21,6 +21,7 @@ class HomeSubscribeListModel {
   int? qtyDecimals;
   int? priceDecimals;
   double? usableBalance;
+  String? preheatTime;
 
   HomeSubscribeListModel({
     this.id,
@@ -43,6 +44,7 @@ class HomeSubscribeListModel {
     this.qtyDecimals,
     this.priceDecimals,
     this.usableBalance,
+    this.preheatTime,
   });
 
   factory HomeSubscribeListModel.fromJson(Map<String, dynamic> json) {
@@ -67,6 +69,7 @@ class HomeSubscribeListModel {
       qtyDecimals: DataUtils.toInt(json['qtyDecimals']),
       priceDecimals: DataUtils.toInt(json['priceDecimals']),
       usableBalance: DataUtils.toDouble(json['usable_balance']),
+      preheatTime: DataUtils.toStr(json['preheat_time']),
     );
   }
 
@@ -91,5 +94,6 @@ class HomeSubscribeListModel {
         'qtyDecimals': qtyDecimals,
         'priceDecimals': priceDecimals,
         'usable_balance': usableBalance,
+        'preheat_time': preheatTime,
       };
 }

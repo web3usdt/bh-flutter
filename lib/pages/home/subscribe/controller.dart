@@ -90,7 +90,7 @@ class SubscribeController extends GetxController {
 
   // 初始化项目周期显示的时间
   void onTimeChange(HomeSubscribeListModel subscribe) {
-    timeList[0]['time'] = subscribe.expectedTimeOnline;
+    timeList[0]['time'] = subscribe.preheatTime;
     timeList[1]['time'] = subscribe.startSubscriptionTime;
     timeList[2]['time'] = subscribe.endSubscriptionTime;
     timeList[3]['time'] = subscribe.announceTime;
