@@ -93,7 +93,7 @@ class SubscribePage extends GetView<SubscribeController> {
           color: AppTheme.color999,
         ),
         TextWidget.body(
-          '${controller.selectedSubscribe?.startSubscriptionTime ?? ''} - ${controller.selectedSubscribe?.endSubscriptionTime ?? ''}',
+          '${controller.selectedSubscribe?.startSubscriptionTime ?? ''}',
           size: 24.sp,
           color: AppTheme.color000,
         ),

@@ -257,8 +257,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-           controller.showTextDialog("累计收益");
-
+            controller.showTextDialog("累计收益");
           })
         ].toRow(),
         TextWidget.body(
