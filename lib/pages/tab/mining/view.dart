@@ -188,11 +188,11 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("销毁平台的3倍");
+            controller.showTextDialog("销毁平台币赠送的3倍算力的USDT价值");
           })
         ].toRow(),
         TextWidget.body(
-          '${controller.performance?.destroyPowerU ?? 0}',
+          '${controller.performance?.expectedIncomeU ?? 0}',
           size: 20.sp,
           color: AppTheme.color000,
         ),
@@ -211,11 +211,11 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("已经产出平台");
+            controller.showTextDialog("已经产出平台币所消耗算力的U价值");
           })
         ].toRow(),
         TextWidget.body(
-          '${controller.performance?.totalIncome ?? 0}',
+          '${controller.performance?.totalIncomeU ?? 0}',
           size: 20.sp,
           color: AppTheme.color000,
         ),
@@ -268,6 +268,31 @@ class MiningPage extends GetView<MiningController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
+
+      // 我的业绩
+      <Widget>[
+        <Widget>[
+          TextWidget.body(
+            '我的业绩'.tr,
+            size: 20.sp,
+            color: AppTheme.color8D9094,
+          ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog("我自己的销毁的算力的USDT价值");
+          })
+        ].toRow(),
+        TextWidget.body(
+          '${controller.performance?.destroyPowerU ?? 0}',
+          size: 20.sp,
+          color: AppTheme.color000,
+        ),
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+
       // 大区业绩
       <Widget>[
         <Widget>[
@@ -281,7 +306,7 @@ class MiningPage extends GetView<MiningController> {
             width: 24.w,
             height: 24.w,
           ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("最大一条线的业绩");
+            controller.showTextDialog("最大一条线的毁的算力的USDT价值");
           })
         ].toRow(),
         TextWidget.body(
@@ -314,7 +339,31 @@ class MiningPage extends GetView<MiningController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
-      // 团队日业绩
+
+      // 团队总业绩
+      <Widget>[
+        <Widget>[
+          TextWidget.body(
+            '团队总业绩'.tr,
+            size: 20.sp,
+            color: AppTheme.color8D9094,
+          ),
+          ImgWidget(
+            path: 'assets/images/home13.png',
+            width: 24.w,
+            height: 24.w,
+          ).marginOnly(left: 10.w).onTap(() {
+            controller.showTextDialog("团队总业绩包含自己的业绩");
+          })
+        ].toRow(),
+        TextWidget.body(
+          '${controller.performance?.teamDestroyAllU ?? 0}',
+          size: 20.sp,
+          color: AppTheme.color000,
+        ),
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
+            // 团队日业绩
       <Widget>[
         <Widget>[
           TextWidget.body(
@@ -360,28 +409,6 @@ class MiningPage extends GetView<MiningController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
-      // 团队总业绩
-      <Widget>[
-        <Widget>[
-          TextWidget.body(
-            '团队总业绩'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-          ImgWidget(
-            path: 'assets/images/home13.png',
-            width: 24.w,
-            height: 24.w,
-          ).marginOnly(left: 10.w).onTap(() {
-            controller.showTextDialog("团队总业绩");
-          })
-        ].toRow(),
-        TextWidget.body(
-          '${controller.performance?.teamDestroyAllU ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
     ].toColumn().paddingAll(30.w).tight(width: 690.w).decorated(
           border: Border.all(width: 1, color: AppTheme.borderLine),
           borderRadius: BorderRadius.circular(16.w),
