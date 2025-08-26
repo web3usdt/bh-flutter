@@ -138,7 +138,7 @@ class ContractKChartPage extends GetView<ContractKChartController> {
       ..nowPriceTextColor = const Color(0xffffffff) // 当前价格文字颜色
       ..selectBorderColor = const Color(0xff6C7A86) // 选中边框颜色
       ..selectFillColor = AppTheme.blockBgColor // 选中背景色
-      ..gridColor = const Color(0xff4c5c74) // 网格线颜色
+      ..gridColor = const Color(0xffffffff) // 网格线颜色
       ..infoWindowNormalColor = AppTheme.color000 // 信息窗口普通文字颜色
       ..infoWindowTitleColor = AppTheme.color000 // 信息窗口标题文字颜色
       ..infoWindowUpColor = AppTheme.colorGreen // 信息窗口涨的颜色

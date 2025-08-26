@@ -28,10 +28,10 @@ class MiningController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    _initData();
+    initData();
   }
 
-  _initData() async {
+  initData() async {
     miningUserinfo = await MiningApi.getMiningUserinfo();
     performance = miningUserinfo.performance;
     print('performance: $performance');
@@ -52,6 +52,12 @@ class MiningController extends GetxController {
     update(["mining"]);
   }
 
+  // 跳转路由
+  jumpRoute(String route) async {
+    await Get.toNamed(route);
+    initData();
+  }
+
   // 新人首次领取矿机
   getMiningNewUserPower() async {
     showGeneralDialog(
@@ -68,7 +74,7 @@ class MiningController extends GetxController {
               Get.back();
               if (res) {
                 Loading.success('激活成功'.tr);
-                _initData();
+                initData();
               }
             });
       },

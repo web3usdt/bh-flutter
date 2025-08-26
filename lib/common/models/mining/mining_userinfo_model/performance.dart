@@ -9,6 +9,7 @@ class Performance {
   String? teamDestroyDayU;
   String? teamDestroyMonthU;
   String? teamDestroyAllU;
+  String? destoryIncomeU;
 
   Performance({
     this.destroyPowerU,
@@ -19,6 +20,7 @@ class Performance {
     this.teamDestroyDayU,
     this.teamDestroyMonthU,
     this.teamDestroyAllU,
+    this.destoryIncomeU,
   });
 
   factory Performance.fromJson(Map<String, dynamic> json) => Performance(
@@ -30,6 +32,7 @@ class Performance {
         teamDestroyDayU: DataUtils.toStr(json['team_destroy_daily_u']),
         teamDestroyMonthU: DataUtils.toStr(json['team_destroy_monthly_u']),
         teamDestroyAllU: DataUtils.toStr(json['team_destroy_all_u']),
+        destoryIncomeU: DataUtils.toStr(json['destory_income_u']),
       );
 
   Map<String, dynamic> toJson() => {
@@ -41,5 +44,6 @@ class Performance {
         'team_destroy_day_u': teamDestroyDayU,
         'team_destroy_month_u': teamDestroyMonthU,
         'team_destroy_all_u': teamDestroyAllU,
+        'destory_income_u': destoryIncomeU,
       };
 }

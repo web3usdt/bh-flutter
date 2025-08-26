@@ -71,7 +71,7 @@ class HomeController extends GetxController {
   @override
   void onReady() {
     super.onReady();
-    _initData();
+    initData();
     // 延迟1秒设置系统样式
     Future.delayed(const Duration(seconds: 1), () {
       AppTheme.setSystemStyle();
@@ -79,7 +79,7 @@ class HomeController extends GetxController {
   }
 
   // 初始化数据
-  void _initData() async {
+  Future<void> initData() async {
     nodeName = Storage().getString('nodeName');
     isShowTotalAssetsBtc = Storage().getBool('isShowTotalAssetsBtc');
     print('币种显示隐藏: $isShowTotalAssetsBtc');

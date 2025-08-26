@@ -659,8 +659,13 @@ class HomePage extends GetView<HomeController> {
             screenAdaptation: true,
             useDefaultBack: false,
           ),
-          body: SingleChildScrollView(
-            child: _buildView(),
+          body: RefreshIndicator(
+            onRefresh: () async {
+              await controller.initData();
+            },
+            child: SingleChildScrollView(
+              child: _buildView(),
+            ),
           ),
         );
       },

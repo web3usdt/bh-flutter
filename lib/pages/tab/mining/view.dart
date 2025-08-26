@@ -160,26 +160,26 @@ class MiningPage extends GetView<MiningController> {
       // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
       // 昨日佣金收益
-      <Widget>[
-        <Widget>[
-          TextWidget.body(
-            '昨日佣金收益'.tr,
-            size: 20.sp,
-            color: AppTheme.color8D9094,
-          ),
-        ].toRow(),
-        TextWidget.body(
-          '${controller.miningUserinfo.commissonYes ?? 0}',
-          size: 20.sp,
-          color: AppTheme.color000,
-        ),
-      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+      // <Widget>[
+      //   <Widget>[
+      //     TextWidget.body(
+      //       '昨日佣金收益'.tr,
+      //       size: 20.sp,
+      //       color: AppTheme.color8D9094,
+      //     ),
+      //   ].toRow(),
+      //   TextWidget.body(
+      //     '${controller.miningUserinfo.commissonYes ?? 0}',
+      //     size: 20.sp,
+      //     color: AppTheme.color000,
+      //   ),
+      // ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
-      // 个人业绩
+      // 个人销毁算力(x3)
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '个人业绩'.tr,
+            '个人销毁算力(x3)'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
@@ -191,11 +191,27 @@ class MiningPage extends GetView<MiningController> {
         ),
       ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
 
+      // 个人收益
+      <Widget>[
+        <Widget>[
+          TextWidget.body(
+            '个人收益'.tr,
+            size: 20.sp,
+            color: AppTheme.color8D9094,
+          ),
+        ].toRow(),
+        TextWidget.body(
+          '${controller.performance?.destoryIncomeU ?? 0}',
+          size: 20.sp,
+          color: AppTheme.color000,
+        ),
+      ].toRow(mainAxisAlignment: MainAxisAlignment.spaceBetween).tight(width: 630.w, height: 80.w),
+
       // 推广奖励
       <Widget>[
         <Widget>[
           TextWidget.body(
-            '推广奖励'.tr,
+            '推广奖励算力'.tr,
             size: 20.sp,
             color: AppTheme.color8D9094,
           ),
@@ -419,7 +435,7 @@ class MiningPage extends GetView<MiningController> {
               .clipRRect(all: 16.w)
               .marginOnly(right: 20.w)
               .onTap(() {
-            Get.toNamed(item['route']);
+            controller.jumpRoute(item['route']);
           }),
       ]
           .toListView(
@@ -431,20 +447,25 @@ class MiningPage extends GetView<MiningController> {
 
   // 主视图
   Widget _buildView() {
-    return CustomScrollView(slivers: [
-      _buildNewHeader().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
-      SizedBox(
-        height: 30.w,
-      ).sliverToBoxAdapter(),
-      _buildNewMining().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
-      SizedBox(
-        height: 50.w,
-      ).sliverToBoxAdapter(),
-      _buildMore().sliverToBoxAdapter(),
-      SizedBox(
-        height: 250.w,
-      ).sliverToBoxAdapter(),
-    ]);
+    return RefreshIndicator(
+      onRefresh: () async {
+        await controller.initData();
+      },
+      child: CustomScrollView(slivers: [
+        _buildNewHeader().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
+        SizedBox(
+          height: 30.w,
+        ).sliverToBoxAdapter(),
+        _buildNewMining().sliverToBoxAdapter().sliverPaddingHorizontal(30.w),
+        SizedBox(
+          height: 50.w,
+        ).sliverToBoxAdapter(),
+        _buildMore().sliverToBoxAdapter(),
+        SizedBox(
+          height: 250.w,
+        ).sliverToBoxAdapter(),
+      ]),
+    );
   }
 
   @override
