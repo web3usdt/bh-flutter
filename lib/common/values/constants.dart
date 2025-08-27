@@ -6,7 +6,7 @@ class Constants {
   static const storageEnv = 'env';
 
   // 是否显示测试节点
-  static const isShowTestNode = true;
+  static const isShowTestNode = false;
 
   // 服务 api
   static const nodeApi = [

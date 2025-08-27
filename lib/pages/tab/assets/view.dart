@@ -141,14 +141,14 @@ class AssetsPage extends GetView<AssetsController> {
       SizedBox(
         width: 50.w,
       ),
-      TextWidget.body(
-        '合约账户'.tr,
-        size: 28.sp,
-        color: controller.currentTab == 1 ? AppTheme.color000 : AppTheme.color8D9094,
-      ).onTap(() => controller.changeTab(1)),
-      SizedBox(
-        width: 50.w,
-      ),
+      // TextWidget.body(
+      //   '合约账户'.tr,
+      //   size: 28.sp,
+      //   color: controller.currentTab == 1 ? AppTheme.color000 : AppTheme.color8D9094,
+      // ).onTap(() => controller.changeTab(1)),
+      // SizedBox(
+      //   width: 50.w,
+      // ),
       TextWidget.body(
         '挖矿账户'.tr,
         size: 28.sp,
@@ -259,57 +259,57 @@ class AssetsPage extends GetView<AssetsController> {
   // 挖矿账户
   Widget _buildMinerAccount() {
     return <Widget>[
-      for (var item in controller.minerAccountList)
+      // for (var item in controller.minerAccountList)
+      <Widget>[
+        ImgWidget(
+          path: controller.minerAccountList.first.image ?? '',
+          width: 60.w,
+          height: 60.w,
+          radius: 30.w,
+        ),
+        SizedBox(
+          width: 20.w,
+        ),
         <Widget>[
-          ImgWidget(
-            path: item.image ?? '',
-            width: 60.w,
-            height: 60.w,
-            radius: 30.w,
-          ),
+          <Widget>[
+            TextWidget.body(
+              '${'挖矿账户'.tr}（BB）',
+              size: 20.sp,
+              color: AppTheme.color999,
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 18.w,
+              color: AppTheme.color999,
+            ),
+          ].toRow(),
           SizedBox(
-            width: 20.w,
+            height: 10.w,
           ),
           <Widget>[
-            <Widget>[
-              TextWidget.body(
-                '${'挖矿账户'.tr}（BB）',
-                size: 20.sp,
-                color: AppTheme.color999,
-              ),
-              SizedBox(
-                width: 10.w,
-              ),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 18.w,
-                color: AppTheme.color999,
-              ),
-            ].toRow(),
-            SizedBox(
-              height: 10.w,
+            TextWidget.body(
+              formatDecimal(controller.minerAccountList.first.usableBalance ?? '0', toFixed: controller.personalAccount.priceDecimals ?? 2),
+              size: 24.sp,
+              weight: FontWeight.bold,
+              textAlign: TextAlign.left,
             ),
-            <Widget>[
-              TextWidget.body(
-                formatDecimal(controller.minerAccountList.first.usableBalance ?? '0', toFixed: controller.personalAccount.priceDecimals ?? 2),
-                size: 24.sp,
-                weight: FontWeight.bold,
-                textAlign: TextAlign.left,
-              ),
-            ].toRow(mainAxisAlignment: MainAxisAlignment.start),
-          ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
-        ]
-            .toRow(mainAxisAlignment: MainAxisAlignment.start)
-            .paddingAll(30.w)
-            .tight(width: 690.w)
-            .decorated(
-              border: Border.all(color: AppTheme.borderLine),
-              borderRadius: BorderRadius.circular(10.w),
-            )
-            .marginOnly(bottom: 30.w)
-            .onTap(() {
-          Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '挖矿账户'});
-        }),
+          ].toRow(mainAxisAlignment: MainAxisAlignment.start),
+        ].toColumn(crossAxisAlignment: CrossAxisAlignment.start),
+      ]
+          .toRow(mainAxisAlignment: MainAxisAlignment.start)
+          .paddingAll(30.w)
+          .tight(width: 690.w)
+          .decorated(
+            border: Border.all(color: AppTheme.borderLine),
+            borderRadius: BorderRadius.circular(10.w),
+          )
+          .marginOnly(bottom: 30.w)
+          .onTap(() {
+        Get.toNamed(AppRoutes.assetsRecord, arguments: {'title': '挖矿账户'});
+      }),
     ].toColumn();
   }
 

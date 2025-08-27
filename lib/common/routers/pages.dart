@@ -1,4 +1,5 @@
 import 'package:BBIExchange/pages/mine/node/index.dart';
+import 'package:BBIExchange/pages/mining/mining_data/index.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:BBIExchange/pages/assets/withdraw_setup/index.dart';
@@ -222,6 +223,9 @@ class AppRoutes {
   static const gameDetail = '/gameDetailPage';
 
   static const hashGameDetail = '/hashGameDetailPage';
+
+  // 数据汇总
+  static const miningData = '/miningDataPage';
 }
 
 class RoutePages {
@@ -294,5 +298,8 @@ class RoutePages {
     GetPage(name: AppRoutes.gameAssetRecord, page: () => const GameAssetsRecordPage()),
     GetPage(name: AppRoutes.gameDetail, page: () => const GameDetailPage()),
     GetPage(name: AppRoutes.hashGameDetail, page: () => const HashGameDetailPage()),
+
+    // 数据汇总
+    GetPage(name: AppRoutes.miningData, page: () => const MiningDataPage()),
   ];
 }
