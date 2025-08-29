@@ -11,6 +11,18 @@ class Constants {
   // 服务 api
   static const nodeApi = [
     {
+      'name': 'happy节点1',
+      'imgUrl': 'https://acdn.kjhvb.cn/speedtest.png', // 访问图片进行测速
+      'api': 'https://acdn.kjhvb.cn', // 接口地址
+      'socketUrl1': 'wss://acdn.kjhvb.cn/ws1', // 接口地址
+      'socketUrl2': 'wss://acdn.kjhvb.cn/ws2', // 接口地址
+      'socketUrl3': 'wss://acdn.kjhvb.cn/ws3', // 接口地址
+      'speed': '999', // 测速结果
+      'isTesting': false, // 是否正在测速
+      'testResult': null, // 测速结果
+      'isSelected': false, // 是否选中
+    },
+    {
       'name': '节点1',
       'imgUrl': 'https://alicdn.kjhvb.cn/speedtest.png', // 访问图片进行测速
       'api': 'https://alicdn.kjhvb.cn', // 接口地址
@@ -34,17 +46,17 @@ class Constants {
       'testResult': null,
       'isSelected': false,
     },
-    // {
-    //   'name': '测试节点',
-    //   'imgUrl': 'https://happyxfb.vip/speedtest.png',
-    //   'api': 'https://happyxfb.vip',
-    //   'socketUrl1': 'wss://h5.happyxfb.vip/ws1',
-    //   'socketUrl2': 'wss://h5.happyxfb.vip/ws2',
-    //   'socketUrl3': 'wss://h5.happyxfb.vip/ws3',
-    //   'speed': '9999',
-    //   'isTesting': false,
-    //   'testResult': null,
-    //   'isSelected': false,
-    // },
+    {
+      'name': '测试节点',
+      'imgUrl': 'https://happyxfb.vip/speedtest.png',
+      'api': 'https://happyxfb.vip',
+      'socketUrl1': 'wss://h5.happyxfb.vip:2346',
+      'socketUrl2': 'wss://h5.happyxfb.vip:2348',
+      'socketUrl3': 'wss://h5.happyxfb.vip:2350',
+      'speed': '9999',
+      'isTesting': false,
+      'testResult': null,
+      'isSelected': false,
+    },
   ];
 }
