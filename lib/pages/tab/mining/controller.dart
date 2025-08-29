@@ -9,8 +9,8 @@ class MiningController extends GetxController {
   // 挖矿信息
   MiningUserinfoModel miningUserinfo = MiningUserinfoModel();
   // 更多功能
-  List<Map<String, dynamic>> moreList = [
-    // {'title': '我的矿机'.tr, 'icon': 'assets/images/mining27.png', 'route': AppRoutes.myMining},
+  List<Map<String, dynamic>> moreList1 = [
+    {'title': '数据汇总'.tr, 'icon': 'assets/images/mining27.png', 'route': AppRoutes.miningData},
     {'title': '矿机产出'.tr, 'icon': 'assets/images/mining28.png', 'route': AppRoutes.miningOutput},
     {
       'title': '算力明细'.tr,
@@ -18,6 +18,8 @@ class MiningController extends GetxController {
       'route': AppRoutes.miningRecord,
       'arguments': {'type': 'power'}
     },
+  ];
+  List<Map<String, dynamic>> moreList2 = [
     {'title': '团队数据'.tr, 'icon': 'assets/images/mining30.png', 'route': AppRoutes.team},
     {'title': '全网矿池'.tr, 'icon': 'assets/images/mining31.png', 'route': AppRoutes.network},
     {'title': '获取算力'.tr, 'icon': 'assets/images/mining32.png', 'route': AppRoutes.getPower},

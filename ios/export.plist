@@ -8,19 +8,12 @@
 	<true/>
 	<key>method</key>
 	<string>app-store-connect</string>
-	<key>provisioningProfiles</key>
-	<dict>
-		<key>com.happyexchange.net</key>
-		<string>HappyExchange</string>
-	</dict>
-	<key>signingCertificate</key>
-	<string>Apple Distribution</string>
 	<key>signingStyle</key>
-	<string>manual</string>
+	<string>automatic</string>
 	<key>stripSwiftSymbols</key>
 	<true/>
 	<key>teamID</key>
-	<string>FMB4KS2F58</string>
+	<string>B3V9Y6XVW3</string>
 	<key>uploadSymbols</key>
 	<true/>
 </dict>

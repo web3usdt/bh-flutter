@@ -199,6 +199,10 @@ class HomeController extends GetxController {
     // final coinList = result.map((e) => e.coinName).toList();
     // log.d('usdtMarketList: [${result.length}] $coinList');
     final result = filteredMarketInfoList2;
+    // 打印每一条数据
+    for (var item in result) {
+      print('item: ${item.toJson()}');
+    }
     // log.d('UsdtMarketPair-display: [UI-Update] [${result.length}] ${result.map((e) => e.coinName).toList()}');
     return result;
   }

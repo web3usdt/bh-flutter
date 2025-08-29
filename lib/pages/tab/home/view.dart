@@ -333,7 +333,16 @@ class HomePage extends GetView<HomeController> {
         <Widget>[
           <Widget>[
             TextWidget.body(
-              '${item.pairName}',
+              '${item.coinName}',
+              size: 28.sp,
+              color: AppTheme.color000,
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              width: 5.w,
+            ),
+            TextWidget.body(
+              '/USDT',
               size: 18.sp,
               color: AppTheme.color8B8B8B,
               textAlign: TextAlign.center,
@@ -504,7 +513,16 @@ class HomePage extends GetView<HomeController> {
             <Widget>[
               <Widget>[
                 TextWidget.body(
-                  '${item.pairName}',
+                  '${item.coinName}',
+                  size: 28.sp,
+                  color: AppTheme.color000,
+                ),
+                SizedBox(
+                  width: 5.w,
+                ),
+                TextWidget.body(
+                  '/USDT',
+                  // '${item.pairName}',
                   size: 20.sp,
                   color: AppTheme.color8B8B8B,
                 ),
@@ -530,16 +548,18 @@ class HomePage extends GetView<HomeController> {
                     ].toColumn()
                   ].toRow()
               ].toRow(mainAxisAlignment: MainAxisAlignment.start),
-              TextWidget.body(
-                '24H量'.tr,
-                size: 16.sp,
-                color: AppTheme.color8B8B8B,
-              ),
-              TextWidget.body(
-                '${item.vol}',
-                size: 16.sp,
-                color: AppTheme.color8B8B8B,
-              ),
+              if (item.pairName != 'BB/USDT')
+                TextWidget.body(
+                  '24H量'.tr,
+                  size: 16.sp,
+                  color: AppTheme.color8B8B8B,
+                ),
+              if (item.pairName != 'BB/USDT')
+                TextWidget.body(
+                  '${item.vol}',
+                  size: 16.sp,
+                  color: AppTheme.color8B8B8B,
+                ),
             ].toColumn(crossAxisAlignment: CrossAxisAlignment.start, mainAxisAlignment: MainAxisAlignment.center)
           ].toRow(),
           <Widget>[

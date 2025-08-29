@@ -86,7 +86,7 @@ class NodePage extends GetView<NodeController> {
   // 测速按钮
   Widget _buildTestButton() {
     return ButtonWidget(
-        text: '重新测试',
+        text: '重新测速',
         height: 88,
         backgroundColor: AppTheme.blockBgColor,
         borderRadius: 10,
