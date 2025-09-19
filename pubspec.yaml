@@ -62,7 +62,7 @@ dependencies:
   #轮播
   carousel_slider: ^5.0.0
   # ui
-  tdesign_flutter: ^0.1.7
+  tdesign_flutter: ^0.2.5
   # 下拉刷新
   pull_to_refresh_flutter3: ^2.0.2
   # 加载动画
@@ -106,7 +106,7 @@ dependencies:
   flutter_secure_storage: ^8.0.0
   uuid: ^4.5.1
   # 时间格式化
-  intl: ^0.19.0
+  intl: ^0.20.2
   # 图片压缩
   flutter_image_compress: 2.2.0
   # 视频压缩
@@ -226,3 +226,4 @@ flutter:
 dependency_overrides:
   k_chart:
     path: ./packages/k_chart
+  intl: 0.20.2

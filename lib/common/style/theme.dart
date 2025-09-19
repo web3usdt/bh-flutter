@@ -56,7 +56,7 @@ class AppTheme {
       colorScheme: scheme,
 
       // 卡片样式
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
           elevation: 0,
           margin: EdgeInsets.zero,
           color: isLightMode ? Colors.white : blockBgColor,

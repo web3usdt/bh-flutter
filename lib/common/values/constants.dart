@@ -22,7 +22,7 @@ class Constants {
       'testResult': null, // 测速结果
       'isSelected': false, // 是否选中
     },
-     {
+    {
       'name': '节点2',
       'imgUrl': 'https://bhali.kjhvb.cn/speedtest.png', // 访问图片进行测速
       'api': 'https://bhali.kjhvb.cn', // 接口地址
@@ -34,6 +34,5 @@ class Constants {
       'testResult': null, // 测速结果
       'isSelected': false, // 是否选中
     },
-    
   ];
 }

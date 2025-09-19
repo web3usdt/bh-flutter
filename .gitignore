@@ -48,3 +48,16 @@ ios/Podfile.lock
 
 # Package lock files
 packages/*/pubspec.lock
+
+# Environment variables and sensitive configuration
+.env
+.env.local
+.env.production
+.env.staging
+config/secrets.dart
+config.dart
+secrets.json
+
+# AWS credentials
+aws-credentials.json
+.aws/
